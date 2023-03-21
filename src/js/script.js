@@ -16,3 +16,25 @@ burgerIcon.addEventListener("click", function () {
     };
   }
 })
+
+const enterButton = document.querySelector('.header__login-button');
+enterButton.addEventListener("click", signUp);
+function signUp(event) {
+  event.preventDefault();
+  const menu = document.querySelector('.header__login-menu');
+  const userPanel = document.querySelector('.header__user-panel');
+  menu.style.display = 'none';
+  userPanel.style.display = 'flex';
+}
+
+const button = document.querySelector('.footer__input-arrow');
+const form = document.querySelector('form');
+button.addEventListener('click', function () {
+  console.log('клиик на кнопку');
+  form.submit();
+})
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log('Форма отправлена');
+})
