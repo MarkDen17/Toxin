@@ -29,6 +29,19 @@
   height: 100vh;
 }
 
+.button_purple {
+  text-align: center;
+  padding: 14px 22px 15px 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+}
+
 // -----Header-----------
 .header {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -119,7 +132,6 @@
   &__registration-button {
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
-    ;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
@@ -253,10 +265,7 @@
 
 }
 
-// ------------
-
-
-//-----Footer----------
+//-------Footer----------
 .footer {
 
   &__body {
@@ -471,8 +480,119 @@
   }
 }
 
-// ------------------------------
+// ----Index-------------------
 .main {
   flex: 1 0 auto;
-  background-color: #a1a1a1;
+  background-color: #fff;
+  background: url('../img/index/image-background.jpg') no-repeat 50%/ cover;
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1206px;
+    min-height: 870px;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 18px;
+    right: 0;
+    max-width: 264px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: variables.$dark-color75;
+  }
+}
+
+.find-room {
+
+
+  &__content {
+    margin-top: 70px;
+    padding: 40px 30px 30px;
+    max-width: 380px;
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+    h1 {
+      margin-bottom: 21px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      color: variables.$dark-color100;
+    }
+  }
+
+  &__dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 320px;
+  }
+
+  &__date {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+
+    & label {
+      margin-bottom: 21px;
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: variables.$dark-color100;
+
+      & span {
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+    }
+
+    & input {
+      width: 150px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 4px;
+    }
+  }
+
+
+  &__guests {
+    & label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 31px;
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: variables.$dark-color100;
+
+      & span {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      & input {
+        width: 320px;
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    width: 320px;
+    height: 44px;
+  }
 }
