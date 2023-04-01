@@ -7,3 +7,32 @@ $dark-color5: rgba($dark-color, 0.05);
 $purple-color:#BC9CFF;
 $green-color:#6FCF97;
 $blue-color: #8BA4F9;
+
+@mixin text-font-h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.714rem;
+  line-height: 2.071rem;
+  color: $dark-color100;
+}
+@mixin text-font-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.357rem;
+  line-height: 1.624rem;
+  color: $dark-color100;
+}
+@mixin text-font-h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.857rem;
+  line-height: 1.071rem;
+  color: $dark-color100;
+}
+@mixin text-font-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.714rem;
+  color: $dark-color75;
+}

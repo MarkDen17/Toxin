@@ -1,5 +1,5 @@
 @@include('./parts/head.html', {
-'title': 'Отель &laquoTOXIN&raquo | Главная',
+'title': 'Отель &laquo;TOXIN&raquo; | Главная',
 'faviconPath': 'img/icons/favicon.svg'
 })
 
@@ -8,38 +8,39 @@
     @@include('./parts/header.html')
     <main class="main">
       <div class="main__content">
-        <div class="find-room">
+        <form class="find-room">
           <div class="find-room__content">
             <h1>Найдём номера под ваши пожелания</h1>
             <div class="find-room__dates">
               <div class="find-room__date">
                 <label for="date-from" class="find-room__label-from">
                   <span>прибытие</span>
-                  <input id="date-from" type="date">
+                  <input id="date-from" class="field__input" readonly>
                 </label>
               </div>
               <div class="find-room__date">
                 <label for="date-to" class="find-room__label-to">
                   <span>выезд</span>
-                  <input id="date-to" type="date">
+                  <input id="date-to" class="field__input" readonly>
                 </label>
               </div>
             </div>
+            <div class="find-room__datapicker_inline"></div>
             <div class="find-room__guests">
               <label for="guests-count" class="find-room__label-guests">
                 <span>гости</span>
                 <input id="guests-count" type="number">
               </label>
             </div>
-            <a class="find-room__button button_purple" href="">подобрать номер</a>
+            <a class="find-room__button button_purple" href="#">подобрать номер</a>
           </div>
-        </div>
-        <div class="main__text">Лучшие номера для вашей работы, отдыха и просто вдохновения</div>
+        </form>
+        <p class="main__text">Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
       </div>
     </main>
     @@include('./parts/footer.html')
   </div>
+  <script src="js/air-datepicker.js"></script>
   <script src="js/script.js"></script>
 </body>
-
 </html>

@@ -1,5 +1,5 @@
 @use './parts/null';
-@use './parts/variables.scss';
+@use './parts/variables.scss' as var;
 
 @font-face {
   font-family: 'Montserrat';
@@ -19,14 +19,23 @@
   font-display: swap;
 }
 
+html {
+  font-size: 14px;
+}
+
 ._lock {
   overflow: hidden;
+}
+
+a:focus-visible {
+  outline: auto;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-width: 320px;
 }
 
 .button_purple {
@@ -53,7 +62,7 @@
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    margin: 15px auto;
+    margin: 14px auto;
     padding: 0 20px;
   }
 
@@ -78,6 +87,8 @@
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
@@ -89,30 +100,30 @@
   &__item {
     margin: 10px 10.5px;
     letter-spacing: 0.2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
   &__link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: variables.$dark-color50;
+    @include var.text-font-regular;
+    white-space: nowrap;
   }
 
   &__login-menu {
     display: flex;
   }
+  &__login-menu li {
+    overflow: visible;
+  }
 
-  &__login {}
 
   &__login-button {
     position: relative;
     padding: 8px 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
+    @include var.text-font-h3;
+    color: var.$purple-color;
     text-transform: uppercase;
-    color: variables.$purple-color;
     background-color: white;
     border-radius: 22px;
   }
@@ -130,11 +141,12 @@
   }
 
   &__registration-button {
+    margin-right: -1px;
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.857rem;
+    line-height: 1.071rem;
     text-transform: uppercase;
     color: #FFF;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -148,6 +160,8 @@
   &__user-panel {
     display: none;
     align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__user-panel li:first-child {
@@ -158,16 +172,15 @@
     display: inline-block;
     width: 1px;
     height: 30px;
-    background-color: variables.$dark-color25;
+    background-color: var.$dark-color25;
   }
 
   &__user-name {
-    display: inline-block;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 17px;
-    color: variables.$dark-color50;
+    display: block;
+    @include var.text-font-regular;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -184,7 +197,7 @@
     width: 40px;
     height: 40px;
     z-index: 10;
-    background-color: variables.$purple-color;
+    background-color: var.$purple-color;
     border-radius: 50%;
   }
 
@@ -237,12 +250,13 @@
     position: absolute;
     top: -400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     margin-top: 10px;
     z-index: 1;
-    border-top: 2px solid variables.$purple-color;
+    border-top: 2px solid var.$purple-color;
     transition: all 0.3s ease 0s;
+    overflow: hidden;
   }
 
   .header__menu._active {
@@ -263,6 +277,9 @@
     flex-direction: column;
   }
 
+  .header__user-name {
+    max-width: 70vw;
+  }
 }
 
 //-------Footer----------
@@ -270,7 +287,7 @@
 
   &__body {
     margin-top: 104px;
-    padding-bottom: 99px;
+    padding-bottom: 84px;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
   }
 
@@ -288,16 +305,12 @@
   }
 
   &__logo {
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     height: 40px;
   }
 
   &__info {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: variables.$dark-color75;
+    @include var.text-font-regular;
   }
 
   &__menu {
@@ -307,14 +320,10 @@
     margin-right: 51px;
   }
 
-  &__menu h2,
-  .footer__subscribe h2 {
+  &__menu h3,
+  .footer__subscribe h3 {
     margin-bottom: 21px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    color: variables.$dark-color100;
+    @include var.text-font-h3;
     text-transform: uppercase;
   }
 
@@ -323,15 +332,11 @@
   &__list {}
 
   &__item {
-    margin: 20px 0;
+    margin: 14px 0;
   }
 
   &__link {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: variables.$dark-color50;
+    @include var.text-font-regular;
   }
 
   &__about {
@@ -349,12 +354,9 @@
 
   &__subscribe-text {
     display: inline-block;
-    margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: variables.$dark-color75;
+    margin-bottom: 21px;
+    background-repeat: no-repeat;
+    @include var.text-font-regular;
   }
 
   &__input-wrapper {
@@ -367,14 +369,12 @@
     padding: 12px 38px 8px 15px;
     max-width: 260px;
     width: 100%;
-    border: 1px solid variables.$dark-color25;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+    border: 1px solid var.$dark-color25;
+    border-radius: 4px;
+    @include var.text-font-regular;
 
     &::placeholder {
-      color: variables.$dark-color25;
+      color: var.$dark-color25;
     }
   }
 
@@ -389,7 +389,7 @@
     background-position: center;
     width: 18px;
     height: 46px;
-    padding: 0 15px;
+    padding: 0 5px 0 35px;
     cursor: pointer;
   }
 
@@ -406,11 +406,8 @@
 
   &__copyright {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: variables.$dark-color75;
+    @include var.text-font-regular;
+    letter-spacing: -0.1px;
   }
 
   &__socials {
@@ -490,21 +487,17 @@
     position: relative;
     margin: 0 auto;
     padding: 0 20px;
-    max-width: 1206px;
-    min-height: 870px;
+    max-width: 1200px;
+    min-height: 756px;
   }
 
   &__text {
     position: absolute;
     bottom: 18px;
-    right: 0;
+    right: 10px;
     max-width: 264px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    text-align: right;
-    color: variables.$dark-color75;
+    @include var.text-font-regular;
+    text-align: right
   }
 }
 
@@ -515,16 +508,13 @@
     margin-top: 70px;
     padding: 40px 30px 30px;
     max-width: 380px;
+    min-width: 280px;
     background-color: #fff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
     h1 {
       margin-bottom: 21px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 29px;
-      color: variables.$dark-color100;
+      @include var.text-font-h1
     }
   }
 
@@ -534,47 +524,75 @@
     justify-content: space-between;
     max-width: 320px;
   }
-
+  
   &__date {
-    width: 150px;
+    max-width: 150px;
     display: flex;
     flex-direction: column;
 
     & label {
-      margin-bottom: 21px;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15px;
+      position: relative;
+      margin-bottom: 7px;
+      @include var.text-font-h3;
       text-transform: uppercase;
-      color: variables.$dark-color100;
+      &::after{
+        content: url(../img/icons/arrow_down.svg);
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: calc(65px - 21px - 7.5px);
+        right: 0px;
+        padding-right: 15px;
+        pointer-events: none;
+      }
 
       & span {
-        display: inline-block;
+        display: block;
         margin-bottom: 6px;
       }
     }
 
     & input {
-      width: 150px;
+      max-width: 150px;
+      width: 100%;
       height: 44px;
       border: 1px solid rgba(31, 32, 65, 0.25);
       border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid rgba(31, 32, 65, 0.55);;
+      }
+    }
+  }
+
+  &__datapicker_inline{
+    position: absolute;
+    display: none;
+  }
+
+  @media (max-width: 420px) {
+    &__dates {
+    flex-direction: column;
+    }
+    &__date{
+      max-width: 320px;
+      & input {
+        max-width: 320px;
+        width: 100%;
+      }
     }
   }
 
 
   &__guests {
+    margin-top: 21px; 
     & label {
       display: flex;
       flex-direction: column;
       margin-bottom: 31px;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15px;
+      @include var.text-font-h3;
       text-transform: uppercase;
-      color: variables.$dark-color100;
+
 
       & span {
         display: inline-block;
@@ -582,7 +600,8 @@
       }
 
       & input {
-        width: 320px;
+        max-width: 320px;
+        width: 100%;
         height: 44px;
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 4px;
@@ -592,7 +611,8 @@
 
   &__button {
     display: inline-block;
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
     height: 44px;
   }
 }
