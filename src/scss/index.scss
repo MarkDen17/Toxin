@@ -140,10 +140,12 @@ a:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0px auto;
+    padding: 0 20px;
     max-width: 1200px;
     width: 100%;
-    margin: 14px auto;
-    padding: 0 20px;
+    height: 70px;
+
   }
 
   &__content::after {
@@ -208,6 +210,10 @@ a:focus-visible {
     text-transform: uppercase;
     background-color: white;
     border-radius: 22px;
+    &:focus-visible{
+      outline: none;
+      opacity: 0.5;
+    }
   }
 
   &__login-button::before {
@@ -336,6 +342,8 @@ a:focus-visible {
     align-items: flex-start;
     margin-top: 10px;
     z-index: 1;
+    background-color: #fff;
+    // width: 100%;
     border-top: 2px solid var.$purple-color;
     transition: all 0.3s ease 0s;
     overflow: hidden;
@@ -349,6 +357,7 @@ a:focus-visible {
 
   .header__login-menu {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .header__login-menu li {
