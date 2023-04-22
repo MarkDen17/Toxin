@@ -4,8 +4,8 @@ $dark-color75: rgba($dark-color, 0.75);
 $dark-color50: rgba($dark-color, 0.5);
 $dark-color25: rgba($dark-color, 0.25);
 $dark-color5: rgba($dark-color, 0.05);
-$purple-color:#BC9CFF;
-$green-color:#6FCF97;
+$purple-color: #BC9CFF;
+$green-color: #6FCF97;
 $blue-color: #8BA4F9;
 
 @mixin text-font-h1 {
@@ -15,6 +15,7 @@ $blue-color: #8BA4F9;
   line-height: 2.071rem;
   color: $dark-color100;
 }
+
 @mixin text-font-h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -22,6 +23,7 @@ $blue-color: #8BA4F9;
   line-height: 1.624rem;
   color: $dark-color100;
 }
+
 @mixin text-font-h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -29,10 +31,36 @@ $blue-color: #8BA4F9;
   line-height: 1.071rem;
   color: $dark-color100;
 }
+
 @mixin text-font-regular {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.714rem;
   color: $dark-color75;
+}
+
+@mixin regular-input {
+  width: 100%;
+  height: 44px;
+  padding: 15px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
+  color: $dark-color25;
+  border: 1px solid $dark-color25;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &::placeholder{
+    color:$dark-color25;
+  }
+  &:hover,
+  &:focus-visible {
+    color: $dark-color75;
+    border: 1px solid rgba(31, 32, 65, 0.55);
+    ;
+  }
 }

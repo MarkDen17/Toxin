@@ -16,12 +16,14 @@
 .-selected-.air-datepicker-cell.-year-.-other-decade-,
 .-selected-.air-datepicker-cell.-day-.-other-month- {
   color: #fff;
-  background: var(--adp-background-color-selected-other-month)
+  background: var(--adp-background-color-selected-other-month);
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
 .-selected-.-focus-.air-datepicker-cell.-year-.-other-decade-,
 .-selected-.-focus-.air-datepicker-cell.-day-.-other-month- {
-  background: var(--adp-background-color-selected-other-month-focused)
+  background: var(--adp-background-color-selected-other-month-focused);
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
 .-in-range-.air-datepicker-cell.-year-.-other-decade-,
@@ -57,7 +59,9 @@
 }
 
 .air-datepicker-cell.-current- {
-  color: var(--adp-color-current-date)
+  color: #fff;
+  border-radius: 50%;
+  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 
 .air-datepicker-cell.-current-.-focus- {
@@ -97,13 +101,13 @@
 .air-datepicker-cell.-range-from- {
   border: 1px solid var(--adp-cell-border-color-in-range);
   background-color: var(--adp-cell-background-color-in-range);
-  border-radius: var(--adp-cell-border-radius) 0 0 var(--adp-cell-border-radius) 0
+  border-radius: var(--adp-cell-border-radius) 0 0 var(--adp-cell-border-radius)
 }
 
 .air-datepicker-cell.-range-to- {
   border: 1px solid var(--adp-cell-border-color-in-range);
   background-color: var(--adp-cell-background-color-in-range);
-  border-radius: 0 var(--adp-cell-border-radius) var(--adp-cell-border-radius) 0
+  border-radius: 0 var(--adp-cell-border-radius) var(--adp-cell-border-radius) 0;
 }
 
 .air-datepicker-cell.-range-to-.-range-from- {
@@ -113,12 +117,14 @@
 .air-datepicker-cell.-selected- {
   color: #fff;
   border: none;
-  background: var(--adp-cell-background-color-selected)
+  background: var(--adp-cell-background-color-selected);
+  border-radius: 50%;
 }
 
 .air-datepicker-cell.-selected-.-current- {
   color: #fff;
-  background: var(--adp-cell-background-color-selected)
+  background: var(--adp-cell-background-color-selected);
+
 }
 
 .air-datepicker-cell.-selected-.-focus- {
@@ -136,7 +142,7 @@
 .air-datepicker-body--day-names {
   display: grid;
   grid-template-columns: repeat(7, var(--adp-day-cell-width));
-  margin: 8px 0 17px
+  margin: 8px 0 3px
 }
 
 .air-datepicker-body--day-name {
@@ -147,7 +153,7 @@
   flex: 1;
   text-align: center;
   text-transform: uppercase;
-  font-size: .8em
+  font-size: 12px
 }
 
 .air-datepicker-body--day-name.-clickable- {
@@ -180,9 +186,8 @@
 .air-datepicker-nav {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--adp-border-color-inner);
   min-height: var(--adp-nav-height);
-  padding: var(--adp-padding);
+  padding: 14px 0px 25px;
   box-sizing: content-box
 }
 
@@ -230,6 +235,8 @@
 }
 
 .air-datepicker-nav--title {
+  font-size: 18px;
+  font-weight: 700;
   border-radius: var(--adp-border-radius);
   padding: 0 8px
 }
@@ -262,6 +269,9 @@
 .air-datepicker-button {
   display: inline-flex;
   color: var(--adp-btn-color);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
   border-radius: var(--adp-btn-border-radius);
   cursor: pointer;
   height: var(--adp-btn-height);
@@ -270,8 +280,7 @@
 }
 
 .air-datepicker-button:hover {
-  color: var(--adp-btn-color-hover);
-  background: var(--adp-btn-background-color-hover)
+  color: rgba(188, 156, 255, 0.7)
 }
 
 .air-datepicker-button:focus {
@@ -507,8 +516,8 @@
   --adp-background-color-in-range-focused: rgba(92, 196, 239, .2);
   --adp-background-color-selected-other-month-focused: #8ad5f4;
   --adp-background-color-selected-other-month: #a2ddf6;
-  --adp-color: #4a4a4a;
-  --adp-color-secondary: rgba(188, 156, 255, 1);
+  --adp-color: #1F2041;;
+  --adp-color-secondary: #9c9c9c;
   --adp-accent-color: rgba(188, 156, 255, 1);
   --adp-color-current-date: var(--adp-accent-color);
   --adp-color-other-month: #dedede;
@@ -519,13 +528,13 @@
   --adp-border-color-inner: #efefef;
   --adp-border-radius: 4px;
   --adp-border-color-inline: #d7d7d7;
-  --adp-nav-height: 32px;
-  --adp-nav-arrow-color: var(--adp-color-secondary);
+  --adp-nav-height: 40px;
+  --adp-nav-arrow-color: #BC9CFF;;
   --adp-nav-action-size: 32px;
-  --adp-nav-color-secondary: var(--adp-color-secondary);
-  --adp-day-name-color: rgba(188, 156, 255, 1);
+  --adp-nav-color-secondary: #1F2041;
+  --adp-day-name-color: #BC9CFF;
   --adp-day-name-color-hover: #8ad5f4;
-  --adp-day-cell-width: 40px;
+  --adp-day-cell-width: 1fr;
   --adp-day-cell-height: 40px;
   --adp-month-cell-height: 42px;
   --adp-year-cell-height: 56px;
@@ -534,12 +543,12 @@
   --adp-pointer-offset: 14px;
   --adp-cell-border-radius: 4px;
   --adp-cell-background-color-hover: var(--adp-background-color-hover);
-  --adp-cell-background-color-selected: #5cc4ef;
-  --adp-cell-background-color-selected-hover: #45bced;
-  --adp-cell-background-color-in-range: rgba(92, 196, 239, 0.1);
-  --adp-cell-background-color-in-range-hover: rgba(92, 196, 239, 0.2);
+  --adp-cell-background-color-selected: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  --adp-cell-background-color-selected-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  --adp-cell-background-color-in-range: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
+  --adp-cell-background-color-in-range-hover: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
   --adp-cell-border-color-in-range: var(--adp-cell-background-color-selected);
-  --adp-btn-height: 32px;
+  --adp-btn-height: 40px;
   --adp-btn-color: var(--adp-accent-color);
   --adp-btn-color-hover: var(--adp-color);
   --adp-btn-border-radius: var(--adp-border-radius);
@@ -778,10 +787,8 @@
 
 .air-datepicker--content {
   box-sizing: content-box;
-  padding: var(--adp-padding);
-  grid-area: body;
-  display: grid;
-  justify-content: center;
+  padding: 0 20px 10px;
+  grid-area: body
 }
 
 .-only-timepicker- .air-datepicker--content {
@@ -822,71 +829,12 @@
   transition: opacity var(--adp-overlay-transition-duration) var(--adp-overlay-transition-ease), height 0s, width 0s
 }
 
-//---------
-.air-datepicker-nav{
-  margin-bottom: 23px; 
-  padding-top: 14px;
-  border-bottom: none;
-}
-.air-datepicker-nav--title{
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 23px;
-  text-align: center;
-  color: #1F2041;
-  i {
-    font-family: 'Montserrat';
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 23px;
-    text-align: center;
-    color: #1F2041;
-  }
+.air-datepicker-cell {
+  width: 40px;
+  height: 40px;
 }
 
-.air-datepicker-cell{
-  width: 100%;
-  height: 100%;
-}
-
-.air-datepicker-body--day-name{
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  color: #BC9CFF;
-}
-.air-datepicker-cell.-current-{
-  color: #fff;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 22px;
-}
-
-.air-datepicker-cell.-selected-{
-  color: #fff;
-  background: #BC9CFF;
-  border-radius: 22px;
-}
-
-.air-datepicker-cell.-in-range-{
-  background: linear-gradient(180deg,rgb(188 156 251 / 25%) 0,rgb(139 164 249 / 25%) 100%);
-  opacity: 1;
-  border-radius: 0;
-}
-
-.air-datepicker--buttons{
-  border-top: none;
-}
-.air-datepicker-button{
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-}
-
-
-.-range-from-:after{
+.-range-from-:after, .-range-to-:after {
   content: "";
   position: absolute;
   left: 0;
@@ -897,19 +845,11 @@
   background: -o-linear-gradient(top,rgba(188,156,255,.25),rgba(139,164,249,.25));
   background: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
   z-index: -1;
-  border-radius: 50% 0 0 50%;
+}
+
+.-range-from-:after {
+border-radius: 50% 0 0 50%;
 }
 .-range-to-:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: -webkit-gradient(linear,left top,left bottom,from(rgba(188,156,255,.25)),to(rgba(139,164,249,.25)));
-  background: -o-linear-gradient(top,rgba(188,156,255,.25),rgba(139,164,249,.25));
-  background: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
-  z-index: -1;
   border-radius: 0 50% 50% 0;
 }
-

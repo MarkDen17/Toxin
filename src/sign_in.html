@@ -1,0 +1,29 @@
+@@include('./parts/head.html', {
+  'title': 'Отель &laquo;TOXIN&raquo; | Вход',
+  'faviconPath': 'img/icons/favicon.svg'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('./parts/header.html')
+      <main class="sign-in-main">
+        <div class="sign-in-main__content">
+          <form class="sign-form">
+            <div class="sign-form__content">
+              <h1>Войти</h1>
+              <input class="sign-form__email-input" type="email" placeholder="Email">
+              <input class="sign-form__password-input" type="password" placeholder="Пароль">
+              <a class="sign-form__sign-button button_purple" href="#">войти</a>
+              <div class="sign-form__registration">
+                <span>Нет аккаунта на Toxin?</span>
+                <a class="registration-button button_light" href="#">создать</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+      @@include('./parts/footer.html')
+    </div>
+  </body>
+  </html>
+  
+  
