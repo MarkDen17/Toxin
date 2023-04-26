@@ -118,6 +118,12 @@ a:focus-visible {
   min-width: 320px;
 }
 
+.wrapper-flex_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 // -----Header-----------
 .header {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -993,4 +999,16 @@ a:focus-visible {
       padding: 12px 25px;
     }
   }
+}
+
+
+
+.search-room .wrapper-flex_row{
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.room-filter{
+  
 }
