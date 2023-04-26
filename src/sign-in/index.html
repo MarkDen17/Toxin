@@ -1,10 +1,10 @@
-@@include('./parts/head.html', {
+@@include('../parts/head.html', {
   'title': 'Отель &laquo;TOXIN&raquo; | Вход',
-  'faviconPath': 'img/icons/favicon.svg'
+  'faviconPath': '../img/icons/favicon.svg'
   })
   <body>
     <div class="wrapper">
-      @@include('./parts/header.html')
+      @@include('../parts/header.html')
       <main class="sign-in-main">
         <div class="sign-in-main__content">
           <form class="sign-form">
@@ -15,15 +15,13 @@
               <a class="sign-form__sign-button button_purple" href="#">войти</a>
               <div class="sign-form__registration">
                 <span>Нет аккаунта на Toxin?</span>
-                <a class="registration-button button_light" href="#">создать</a>
+                <a class="registration-button button_light" href="/registration/">создать</a>
               </div>
             </div>
           </form>
         </div>
       </main>
-      @@include('./parts/footer.html')
+      @@include('../parts/footer.html')
     </div>
   </body>
   </html>
-  
-  

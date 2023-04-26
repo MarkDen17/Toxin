@@ -17,17 +17,6 @@ burgerIcon.addEventListener("click", function () {
   }
 })
 
-const enterButton = document.querySelector('.header__login-button');
-enterButton.addEventListener("click", signUp);
-function signUp(event) {
-  event.preventDefault();
-  const menu = document.querySelector('.header__login-menu');
-  const userPanel = document.querySelector('.header__user-panel');
-  menu.style.display = 'none';
-  userPanel.style.display = 'flex';
-}
-
-
 const inputFrom = document.querySelector("#date-from");
 const inputTo = document.querySelector("#date-to");
 const dataPickerContainer = document.querySelector(".find-room__datapicker_inline");

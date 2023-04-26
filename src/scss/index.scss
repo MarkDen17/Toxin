@@ -118,19 +118,6 @@ a:focus-visible {
   min-width: 320px;
 }
 
-.button_purple {
-  text-align: center;
-  padding: 14px 22px 15px 18px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #FFF;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-}
-
 // -----Header-----------
 .header {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -194,7 +181,7 @@ a:focus-visible {
 
   &__login-menu {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
 
   &__login-menu li {
@@ -203,29 +190,12 @@ a:focus-visible {
 
 
   &__login-button {
-    position: relative;
-    padding: 8px 18px;
-    @include var.text-font-h3;
+    padding: 7.5px 18px;
     color: var.$purple-color;
-    text-transform: uppercase;
-    background-color: white;
-    border-radius: 22px;
-    &:focus-visible{
-      outline: none;
-      opacity: 0.5;
-    }
-  }
-
-  &__login-button::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
-    border-radius: 22px;
-    z-index: -1;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.857rem;
+    line-height: 1.071rem;
   }
 
   &__registration-button {
@@ -720,6 +690,307 @@ a:focus-visible {
       right: 15px;
       top: 50%;
       transform: translate(0, -50%);
+    }
+  }
+}
+
+//-----Sign-in------
+
+.sign-in-main {
+  flex: 1 0 auto;
+  background-color: #fff;
+  background: url('/img/sign-in/background-image3.jpg') no-repeat 50%/ cover;
+  min-height: 702px;
+
+  &__content {
+    position: relative;
+    margin-top: 172px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    max-width: 420px;
+  }
+
+  .sign-form {
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    &__content {
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 40px 10px 30px;
+      position: relative;
+      z-index: 0
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    &__email-input {
+      @include var.regular-input;
+      margin-bottom: 10px;
+    }
+
+    &__password-input {
+      @include var.regular-input;
+      margin-bottom: 20px;
+    }
+
+    &__sign-button {
+      margin-bottom: 30px;
+      position: relative;
+
+      &::after {
+        content: url(../img/icons/arrow_forward_white.svg);
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: 15px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+
+    &__registration {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 44px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.714rem;
+      color: #000;
+    }
+  }
+}
+
+//------registration-----
+.registration-main {
+  flex: 1 0 auto;
+  min-height: 753px;
+  background-color: #fff;
+  background: url('/img/registration/background-image2.jpg') no-repeat 50%/ cover;
+
+  &__content {
+    position: relative;
+    margin-top: 19px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    max-width: 420px;
+
+  }
+
+  .account-registration {
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    &__content {
+      max-width: 340px;
+      margin: 0 auto;
+      padding: 40px 10px 30px;
+      position: relative;
+      z-index: 0
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    &__name {
+      @include var.regular-input;
+      margin-bottom: 10px;
+    }
+
+    &__surname {
+      @include var.regular-input;
+      margin-bottom: 10px;
+    }
+
+    &__gender-select {
+      margin-bottom: 20px;
+
+      label {
+        position: relative;
+        padding-left: 30px;
+        @include var.text-font-regular;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+
+        input {
+          position: absolute;
+          height: 0;
+          width: 0;
+          opacity: 0;
+          visibility: hidden;
+          cursor: pointer;
+        }
+
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #fff;
+          border-radius: 50%;
+          border: 1px solid var.$dark-color25;
+        }
+
+        input:checked~.checkmark {
+          background-color: #fff;
+          border: 1px solid var.$purple-color;
+        }
+
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+        input:checked~.checkmark:after {
+          display: block;
+        }
+
+        .checkmark:after {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, - 50%);
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+
+      }
+    }
+
+    &__birthdate {
+      @include var.regular-input;
+      margin-bottom: 20px;
+    }
+
+    &__email-input {
+      @include var.regular-input;
+      margin-bottom: 10px;
+    }
+
+    &__password-input {
+      @include var.regular-input;
+      margin-bottom: 5px;
+    }
+
+    &__mail-subscription {}
+
+    .switch {
+      position: relative;
+      display: block;
+      height: 34px;
+      margin-bottom: 16px;
+      @include var.text-font-regular
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    .slider {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+      height: 20px;
+      margin-right: 3px;
+      background-color: #fff;
+      transition: all .4s;
+      transform: translate(0, -50%);
+      border: 1px solid var.$dark-color25;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      bottom: 3px;
+      background-color: var.$dark-color25;
+      transition: transform .4s;
+    }
+
+    input:checked+.slider {
+      border: 1px solid var.$purple-color;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px var.$purple-color;
+    }
+
+    input:checked+.slider:before {
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      transform: translateX(20px);
+    }
+
+    .slider.round {
+      border-radius: 10px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .payment-button {
+      position: relative;
+      margin-bottom: 31px;
+
+      &::after {
+        content: url("../img/icons/arrow_forward_white.svg");
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: 15px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+
+    &__login {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 44px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.714rem;
+      color: #000;
+
+    }
+
+    .login-button {
+      position: relative;
+      padding: 12px 25px;
     }
   }
 }
