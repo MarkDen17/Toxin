@@ -118,7 +118,7 @@ a:focus-visible {
   min-width: 320px;
 }
 
-.wrapper-flex_row{
+.wrapper-flex_row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -144,17 +144,20 @@ a:focus-visible {
   &__content::after {
     content: "";
     position: absolute;
-    top: -15px;
+    top: 0px;
     left: 0;
     width: 100%;
-    height: 55px;
+    height: 70px;
     z-index: 5;
     background-color: #fff;
   }
 
   &__logo {
-    height: 40px;
+    line-height: 70px;
     z-index: 10;
+    img {
+      vertical-align: middle;
+    }
   }
 
   &__menu {
@@ -308,27 +311,29 @@ a:focus-visible {
 
   .header__content {
     flex-wrap: wrap;
+    position: relative;
   }
 
   .header__menu {
     position: absolute;
     top: -400px;
+    left: 0;
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
-    margin-top: 10px;
     z-index: 1;
+    width: 100%;
     background-color: #fff;
-    // width: 100%;
     border-top: 2px solid var.$purple-color;
-    transition: all 0.3s ease 0s;
+    border-bottom: 2px solid var.$purple-color;
+    transition: top 0.3s ease 0s;
     overflow: hidden;
   }
 
   .header__menu._active {
-    position: relative;
+    position: absolute;
+    top: 70px;
     width: 100%;
-    top: 0;
   }
 
   .header__login-menu {
@@ -1003,12 +1008,134 @@ a:focus-visible {
 
 
 
-.search-room .wrapper-flex_row{
+.search-room .wrapper-flex_row {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 20px;
+
+  &>* {
+    margin-top: 30px;
+  }
 }
 
-.room-filter{
-  
+.room-filter {
+  max-width: 266px;
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  &__dates {
+    margin-bottom: 20px;
+
+    label {
+      position: relative;
+      display: block;
+      h3 {
+        margin-bottom: 5px;
+      }
+      input {
+        @include var.regular-input;
+      }
+      &::after {
+        content: url(../img/icons/arrow_down.svg);
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 36.5px;
+        right: 0;
+        padding-right: 15px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__guests-count {
+    margin-bottom: 30px;
+    label {
+      position: relative;
+      display: block;
+
+      h3 {
+        margin-bottom: 5px;
+      }
+
+      input {
+        @include var.regular-input;
+      }
+
+      &::after {
+        content: url(../img/icons/arrow_down.svg);
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 36.5px;
+        right: 0;
+        padding-right: 15px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__price-filter {}
+
+  &__permissions {
+    h3 {
+      margin-bottom: 16px;
+    }
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    input{
+      position: absolute;
+      height: 0;
+      width: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .checkmark {
+      position: relative;
+      height: 20px;
+      width: 20px;
+      margin-right: 10px;
+      background-color: #fff;
+      border: 1px solid var.$dark-color25;
+    }
+
+    input:checked~.checkmark {
+      background-color: #fff;
+      border: 1px solid var.$purple-color;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .checkmark:after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, - 50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+  }
+
+  &__accessibility {}
+
+  &__facilities {}
+
+  &__additional-facilities {}
+
 }
