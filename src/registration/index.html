@@ -1,51 +1,54 @@
 @@include('../parts/head.html', {
-  'title': 'Отель &laquo;TOXIN&raquo; | Регистрация',
-  'faviconPath': '../img/icons/favicon.svg'
-  })
-  <body>
-    <div class="wrapper">
-      @@include('../parts/header.html')
-      <main class="registration-main">
-        <div class="registration-main__content">
-          <form class="account-registration">
-            <div class="account-registration__content">
-              <h1>Регистрация аккаунта</h1>
-              <input class="account-registration__name" type="text" placeholder="Имя">
-              <input class="account-registration__surname" type="text" placeholder="Фамилия">
-              <fieldset class="account-registration__gender-select" for="gender">
-                <label for="male">Мужчина
-                  <input class="checkbox" type="radio" name="gender" id="male">
-                  <span class="checkmark"></span>
-                </label>
-                <label for="female">Женщина
-                  <input class="checkbox" type="radio" name="gender" id="female">
-                  <span class="checkmark"></span>
-                </label>
-              </fieldset>
-              <label for="birthdate">
-                <h3>дата рождения</h3>
-              </label>
-              <input class="account-registration__birthdate" id="birthdate" type="" placeholder="ДД.ММ.ГГГГ">
-              <h3>данные для входа в сервис</h3>
-              <input class="account-registration__email-input" type="email" placeholder="Email">
-              <input class="account-registration__password-input" type="password" placeholder="Пароль">
-    
-              <label class="switch" for="mail-subscription">
-                <input class="account-registration__mail-subscription" type="checkbox" name="" id="mail-subscription">
-                <span class="slider round"></span>
-                Получать спецпредложения
-              </label>
-              <a class="payment-button button_purple" href="#">перейти к оплате</a>
-              <div class="account-registration__login">
-                <span>Уже есть аккаунт на Toxin</span>
-                <a class="login-button button_light" href="/sign-in/">войти</a>
-              </div>
-            </div>
-          </form>
-        </div>
-      </main>
-      @@include('../parts/footer.html')
-    </div>
-  </body>
-  </html>
+'title': 'Отель &laquo;TOXIN&raquo; | Регистрация',
+'faviconPath': '../img/icons/favicon.svg'
+})
+</head>
 
+<body>
+  <div class="wrapper">
+    @@include('../parts/header.html')
+    <main class="registration-main">
+      <div class="registration-main__content">
+        <form class="account-registration">
+          <div class="account-registration__content">
+            <h1>Регистрация аккаунта</h1>
+            <input class="account-registration__name" type="text" placeholder="Имя">
+            <input class="account-registration__surname" type="text" placeholder="Фамилия">
+            <fieldset class="account-registration__gender-select" for="gender">
+              <label for="male">Мужчина
+                <input class="checkbox" type="radio" name="gender" id="male">
+                <span class="checkmark"></span>
+              </label>
+              <label for="female">Женщина
+                <input class="checkbox" type="radio" name="gender" id="female">
+                <span class="checkmark"></span>
+              </label>
+            </fieldset>
+            <label for="birthdate">
+              <h3>дата рождения</h3>
+            </label>
+            <input class="account-registration__birthdate" id="birthdate" type="" placeholder="ДД.ММ.ГГГГ">
+            <h3>данные для входа в сервис</h3>
+            <input class="account-registration__email-input" type="email" placeholder="Email">
+            <input class="account-registration__password-input" type="password" placeholder="Пароль">
+
+            <label class="switch" for="mail-subscription">
+              <input class="account-registration__mail-subscription" type="checkbox" name="" id="mail-subscription">
+              <span class="slider round"></span>
+              Получать спецпредложения
+            </label>
+            <a class="payment-button button_purple" href="#">перейти к оплате</a>
+            <div class="account-registration__login">
+              <span>Уже есть аккаунт на Toxin</span>
+              <a class="login-button button_light" href="/sign-in/">войти</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    @@include('../parts/footer.html')
+  </div>
+  <script src="../js/burger-menu.js"></script>
+</body>
+
+</html>

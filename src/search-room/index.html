@@ -1,62 +1,186 @@
 @@include('../parts/head.html', {
-  'title': 'Отель &laquo;TOXIN&raquo; | Поиск комнат',
-  'faviconPath': '../img/icons/favicon.svg'
-  })
-  <body class="search-room">
-    <div class="wrapper">
-      @@include('../parts/header.html')
-      <div class="wrapper-flex_row">
-        <aside class="room-filter">
-          <div class="room-filter__dates">
-            <label for="dates" class=""><h3>даты пребывания в отеле</h3></label>
+'title': 'Отель &laquo;TOXIN&raquo; | Поиск комнат',
+'faviconPath': '../img/icons/favicon.svg'
+})
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+
+<body class="search-room">
+  <div class="wrapper">
+    @@include('../parts/header.html')
+    <div class="wrapper-flex_row">
+      <aside class="room-filter">
+        <div class="room-filter__dates">
+          <label for="dates">
+            <h3>даты пребывания в отеле</h3>
             <input id="dates" type="date" readonly>
-          </div>
-          <div class="room-filter__guests-count">
-            <label for="guests-count"><h3>гости</h3></label>
+          </label>
+        </div>
+        <div class="room-filter__guests-count">
+          <label for="guests-count">
+            <h3>гости</h3>
             <input id="guests-count" type="number" readonly>
+          </label>
+        </div>
+        <div class="room-filter__price-filter">
+          <label for="slider">
+            <div class="container">
+              <h3>диапазон цены</h3>
+              <span id="slider-values">5000 - 10000</span>
+            </div>
+            <div id="slider"></div>
+          </label>
+          <p>Стоимость за сутки пребывания в номере</p>
+        </div>
+        <div class="room-filter__permissions">
+          <h3>правила дома</h3>
+          <label for="smoking-permission">
+            <input id="smoking-permission" type="checkbox">
+            <span class="checkmark"></span>
+            Можно курить
+          </label>
+          <label for="animals-permission">
+            <input id="animals-permission" type="checkbox">
+            <span class="checkmark"></span>
+            Можно с питомцами
+          </label>
+          <label for="invitation-permission">
+            <input id="invitation-permission" type="checkbox">
+            <span class="checkmark"></span>
+            Можно пригласить гостей
+            (до 10 человек)
+          </label>
+        </div>
+        <div class="room-filter__accessibility">
+          <label for="wide-hallway">
+            <input type="checkbox" id="wide-hallway">
+            <span class="checkmark"></span>
+            <h3>Широкий коридор</h3>
+          </label>
+          <p>Ширина коридоров в номере не менее 91 см.</p>
+          <label for="assistant">
+            <input type="checkbox" id="assistant">
+            <span class="checkmark"></span>
+            <h3>Помощник для инвалидов</h3>
+          </label>
+          <p>На 1 этаже вас встретит специалист и проводит до номера.</p>
+        </div>
+        <div class="room-filter__facilities">
+          <label for="">
+            <h3>удобства номера</h3>
+            <input value="Удобства номера" type="text" readonly>
+          </label>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu__item">
+              <h3 class="item__tittle">спальни</h3>
+              <div class="item__quantity">
+                <button type="button" value="minus" disabled>-</button>
+                <span class="item__count">0</span>
+                <button type="button" value="plus">+</button>
+              </div>
+            </div>
+            <div class="dropdown-menu__item">
+              <h3 class="item__tittle">кровати</h3>
+              <div class="item__quantity">
+                <button type="button" value="minus" disabled>-</button>
+                <span class="item__count">0</span>
+                <button type="button" value="plus">+</button>
+              </div>
+            </div>
+            <div class="dropdown-menu__item">
+              <h3 class="item__tittle">ванные комнаты</h3>
+              <div class="item__quantity">
+                <button type="button" value="minus" disabled>-</button>
+                <span class="item__count">0</span>
+                <button type="button" value="plus">+</button>
+              </div>
+            </div>
           </div>
-          <div class="room-filter__price-filter">
-            <label for=""><h3>диапазон цены</h3></label>
-            <input type="range">
+
+        </div>
+        <fieldset class="room-filter__additional-facilities">
+          <legend>
+            <h3 class="additional-facilities__title" data-open="false">дополнительные удобства</h3>
+          </legend>
+          <div class="container">
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Завтрак
+            </label>
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Письменный стол
+            </label>
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Стул для кормления
+            </label>
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Кроватка
+            </label>
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Телевизор
+            </label>
+            <label>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Шампунь
+            </label>
           </div>
-          <div class="room-filter__restrictions">
-            <input type="checkbox">
-            <label for="">Можно курить</label>
-            <input type="checkbox">
-            <label for="">Можно с питомцами</label>
-            <input type="checkbox">
-            <label for="">Можно пригласить гостей (до 10 человек)</label>
+        </fieldset>
+      </aside>
+      <main class="search-room-main">
+        <div class="search-room-main__content">
+          <h1>Номера, которые мы для вас подобрали</h1>
+          <div class="search-room-main__catalog">
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="room-filter__accessibility">
-            <input type="checkbox" name="" id="">
-            <label for="">Широкий коридор</label>
-            <p>Ширина коридоров в номере не менее 91 см.</p>
-            <input type="checkbox" name="" id="">
-            <label for="">Помощник для инвалидов</label>
-            <p>На 1 этаже вас встретит специалист  и проводит до номера.</p>
-          </div>
-          <div class="room-filter__facilities">
-            <label for=""><h3>удобства номера</h3></label>
-            <input type="text">
-          </div>
-          <fieldset class="room-filter__additional-facilities">
-            <legend><h3>дополнительные удобства</h3></legend>
-            <input type="checkbox" name="" id="">
-            <input type="checkbox" name="" id="">
-            <input type="checkbox" name="" id="">
-            <input type="checkbox" name="" id="">
-            <input type="checkbox" name="" id="">
-            <input type="checkbox" name="" id="">
-          </fieldset>
-        </aside>
-        <main class="search-room-main">
-          <div class="search-room__content">
-            <h1>Номера, которые мы для вас подобрали</h1>
-            <div class="search-room__catalog"></div>
-          </div>
-        </main>
-      </div>
-      @@include('../parts/footer.html')
+        </div>
+      </main>
     </div>
-  </body>
-  </html>
+  </div>
+  @@include('../parts/footer.html')
+  <script src="../js/burger-menu.js"></script>
+  <script src="../js/nouislider.min.js"></script>
+  <script src="../js/search-room.js"></script>
+  </div>
+</body>
+
+</html>
