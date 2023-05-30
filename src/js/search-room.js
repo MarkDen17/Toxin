@@ -68,3 +68,20 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+
+if (document.querySelector(".room-filter") && document.querySelector(".filter-button")) {
+  const button = document.querySelector(".filter-button")
+  const roomFilter = document.querySelector(".room-filter")
+  button.addEventListener("click", function () {
+    roomFilter.classList.toggle("room-filter_open")
+  })
+}
+
+if (document.querySelector(".close-button")) {
+  const button = document.querySelector(".close-button")
+  const roomFilter = document.querySelector(".room-filter")
+  button.addEventListener("click", function () {
+    roomFilter.classList.toggle("room-filter_open")
+  })
+}

@@ -10,7 +10,9 @@
   <div class="wrapper">
     @@include('../parts/header.html')
     <div class="wrapper-flex_row">
-      <aside class="room-filter">
+      <aside class="room-filter room-filter_open">
+        <button class="close-button" type="button">
+        </button>
         <div class="room-filter__dates">
           <label for="dates">
             <h3>даты пребывания в отеле</h3>
@@ -140,7 +142,277 @@
       <main class="search-room-main">
         <div class="search-room-main__content">
           <h1>Номера, которые мы для вас подобрали</h1>
+          <button class="filter-button" type="button">показать фильтры</button>
           <div class="search-room-main__catalog">
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-card">
+              <div class="catalog-card__content">
+                <div class="catalog-card__images swiper">
+                  <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="">
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="catalog-card__info">
+                  <span class="catalog-card__number"> № 888</span>
+                  <span class="catalog-card__type">люкс</span>
+                  <span class="catalog-card__price-per-day"><b>9 990₽</b> в сутки</span>
+                </div>
+                <div class="catalog-card__stats">
+                  <div class="catalog-card__rating">
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                    <span class="_filled"></span>
+                  </div>
+                  <span class="catalog-card__review"><b>145</b> Отзывов</span>
+                </div>
+              </div>
+            </div>
             <div class="catalog-card">
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
