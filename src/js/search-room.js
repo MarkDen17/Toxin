@@ -73,15 +73,19 @@ const swiper = new Swiper('.swiper', {
 if (document.querySelector(".room-filter") && document.querySelector(".filter-button")) {
   const button = document.querySelector(".filter-button")
   const roomFilter = document.querySelector(".room-filter")
+  const backdrop = document.querySelector(".search-room-main__backdrop")
   button.addEventListener("click", function () {
-    roomFilter.classList.toggle("room-filter_open")
+    roomFilter.classList.add("room-filter_open")
+    backdrop.style.display = "block"
   })
 }
 
 if (document.querySelector(".close-button")) {
   const button = document.querySelector(".close-button")
   const roomFilter = document.querySelector(".room-filter")
+  const backdrop = document.querySelector(".search-room-main__backdrop")
   button.addEventListener("click", function () {
-    roomFilter.classList.toggle("room-filter_open")
+    roomFilter.classList.remove("room-filter_open")
+    backdrop.style.display = ""
   })
 }
