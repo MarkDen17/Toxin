@@ -16,17 +16,17 @@
         <div class="room-filter__dates">
           <label for="dates">
             <h3>даты пребывания в отеле</h3>
-            <input id="dates" type="date" readonly>
+            <input class="unstyled" id="dates" type="date" readonly>
           </label>
         </div>
         <div class="room-filter__guests-count">
           <label for="guests-count">
             <h3>гости</h3>
-            <input id="guests-count" type="number" readonly>
+            <input id="guests-count" type="number" readonly placeholder="Количество гостей">
           </label>
         </div>
         <div class="room-filter__price-filter">
-          <label for="slider">
+          <label>
             <div class="container">
               <h3>диапазон цены</h3>
               <span id="slider-values">5000 - 10000</span>
@@ -513,7 +513,8 @@
               </a>
             </li>
           </ul>
-          <div class="search-room-main__results results"></div>
+          <div class="search-room-main__results results"><span>1</span> – <span>12</span> из <span>100+</span> вариантов
+            аренды</div>
         </div>
       </main>
     </div>
