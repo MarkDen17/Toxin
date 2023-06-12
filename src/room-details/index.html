@@ -1,5 +1,5 @@
 @@include('../parts/head.html', {
-'title': 'Отель &laquo;TOXIN&raquo; | Номер 888',
+'title': 'Отель &laquo;TOXIN&raquo; | №888',
 'faviconPath': '../img/icons/favicon.svg'
 })
 </head>
@@ -9,34 +9,82 @@
     @@include('../parts/header.html')
     <main class="room-details">
       <div class="room-details__content">
-        <div class="room-details__gallery">
-          <img src="../img/room-details/image-big.jpg" alt="фото номера">
-          <img src="../img/room-details/image-top.jpg" alt="фото номера">
-          <img src="../img/room-details/image-bottom.jpg" alt="фото номера">
+        <div class="room-details__gallery gallery">
+          <figure class="gallery__item"><img class="gallery__img" src="../img/room-details/image-big.jpg"
+              alt="фото номера"></figure>
+          <figure class="gallery__item"><img class="gallery__img" src="../img/room-details/image-top.jpg"
+              alt="фото номера"></figure>
+          <figure class="gallery__item"><img class="gallery__img" src="../img/room-details/image-bottom.jpg"
+              alt="фото номера"></figure>
         </div>
         <div class="room-details__room-info room-info">
           <div class="grid-container">
-            <div class="room-info__advantages">
+            <div class="room-info__advantages advantages">
               <h2>Сведения о номере</h2>
-              <ul class="advantages__">
-                <li class="advantages__item">Комфорт
-
-                  <span>Шумопоглощающие стены</span>
+              <ul class="advantages__list">
+                <li class="advantages__item">
+                  <div class="inner">
+                    <b>Комфорт</b>
+                    <div>Шумопоглощающие стены</div>
+                  </div>
                 </li>
-                <li class="advantages__item">Удобство
-
-                  <span>кно в каждой из спален</span>
+                <li class="advantages__item">
+                  <div class="inner">
+                    <b>Удобство</b>
+                    <div>Окно в каждой из спален</div>
+                  </div>
                 </li>
-                <li class="advantages__item">Уют
-                  Номер оснащён камином
-                  <span>Номер оснащён камином</span>
+                <li class="advantages__item">
+                  <div class="inner">
+                    <b>Уют</b>
+                    <div>Номер оснащён камином</div>
+                  </div>
                 </li>
-              </ul>list
+              </ul>
             </div>
-            <div class="room-info__impression">
-              <h2>Впечатления от номера</h2>
-              <div class=".wrapper-flex_row">
-                <svg></svg>
+            <div class="room-info__impression impression">
+              <h2 class="impression__title">Впечатления от номера</h2>
+              <div class="wrapper-flex_row">
+                <svg class="donut" width="120" height="120" viewBox="0 0 38 38">
+                  <g id="circle" fill="none" transform="rotate(-90 19 19)">
+                    <circle class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#Gradient4)" stroke-width="1"
+                      stroke-dasharray="100 0">
+                    </circle>
+                    <circle class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#Gradient3)" stroke-width="1"
+                      stroke-dasharray="50 50">
+                    </circle>
+                    <circle class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#Gradient2)" stroke-width="1"
+                      stroke-dasharray="25 75">
+                    </circle>
+                    <circle class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#Gradient1)" stroke-width="1"
+                      stroke-dasharray="0 100">
+                    </circle>
+                  </g>
+                  <g text-anchor="middle" dominant-baseline="central">
+                    <text class="donut__text" x="50%" y="50%" dy="-4" font-size="9" font-weight="700"
+                      fill="#BC9CFF">260</text>
+                    <text class="donut__sub-text" x="50%" y="50%" dy="4" font-size="4" font-weight="700"
+                      fill="#BC9CFF">голосов</text>
+                  </g>
+                  <defs>
+                    <linearGradient id="Gradient1" gradientTransform="rotate(180, 0.5, 0.5)">
+                      <stop stop-color="#919191" offset="0%" />
+                      <stop stop-color="#3D4975" offset="100%" />
+                    </linearGradient>
+                    <linearGradient id="Gradient2" gradientTransform="rotate(180, 0.5, 0.5)">
+                      <stop stop-color="#BC9CFF" offset="0%" />
+                      <stop stop-color="#8BA4F9" offset="100%" />
+                    </linearGradient>
+                    <linearGradient id="Gradient3" gradientTransform="rotate(180, 0.5, 0.5)">
+                      <stop stop-color="#6FCF97" offset="0%" />
+                      <stop stop-color="#66D2EA" offset="100%" />
+                    </linearGradient>
+                    <linearGradient id="Gradient4" gradientTransform="rotate(180, 0.5, 0.5)">
+                      <stop stop-color="#FFE39C" offset="0%" />
+                      <stop stop-color="#FFBA9C" offset="100%" />
+                    </linearGradient>
+                  </defs>
+                </svg>
                 <ul class="impression__list">
                   <li class="impression__item">Великолепно</li>
                   <li class="impression__item">Хорошо</li>
@@ -54,15 +102,27 @@
                 <li class="reviews-list__review review">
                   <article>
                     <div class="review__header">
-                      <img src="../img/room-details/avatar1.jpg" alt="аватарка пользователя"
+                      <img src="../img/room-details/avatar1_46x46.jpg" alt="аватарка пользователя"
                         class="review__author-avatar">
-                      <div class="review__author-name">Мурад Сарафанов</div>
+                      <div class="review__author-name"><b>Мурад Сарафанов</b></div>
                       <div class="review__date">5 дней назад</div>
                     </div>
                     <div class="review__body">
-                      <div class="review__like like">
-                        <span class="like__icon"></span>
-                        <span class="like__co"></span>
+                      <div class="review__like like like_checked">
+                        <span class="like__icon">
+                          <svg width="10" height="8" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.90237 7.88672L4.2969 7.33984C3.6068 6.71484 3.1055 6.2526 2.793 5.95312C2.4805 5.65365 2.12893 5.28255 1.73831 4.83984C1.3607 4.39714 1.10029 4 0.957059 3.64844C0.81383 3.28385 0.742215 2.91276 0.742215 2.53516C0.742215 1.89714 0.957059 1.35677 1.38675 0.914062C1.82945 0.471354 2.37633 0.25 3.02737 0.25C3.78258 0.25 4.40758 0.542969 4.90237 1.12891C5.39716 0.542969 6.02216 0.25 6.77737 0.25C7.42841 0.25 7.96878 0.471354 8.39847 0.914062C8.84117 1.35677 9.06253 1.89714 9.06253 2.53516C9.06253 3.04297 8.89326 3.57031 8.55472 4.11719C8.21617 4.66406 7.84508 5.13932 7.44143 5.54297C7.05081 5.94661 6.40628 6.55208 5.50784 7.35938L4.90237 7.88672Z" />
+                            <defs>
+                              <linearGradient id="paint_gradient" x1="4.90237" y1="-6" x2="4.90237" y2="14"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#BC9CFF" />
+                                <stop offset="1" stop-color="#8BA4F9" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </span>
+                        <span class="like__count">12</span>
                       </div>
                       <p class="review__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще
                         потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не
@@ -70,21 +130,54 @@
                     </div>
                   </article>
                 </li>
+                <li class="reviews-list__review review">
+                  <article>
+                    <div class="review__header">
+                      <img src="../img/room-details/avatar2_46x46.jpg" alt="аватарка пользователя"
+                        class="review__author-avatar">
+                      <div class="review__author-name"><b>Софья Вышегородская</b></div>
+                      <div class="review__date">Неделю назад</div>
+                    </div>
+                    <div class="review__body">
+                      <div class="review__like like">
+                        <span class="like__icon">
+                          <svg width="10" height="8" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            stroke="rgba(31, 32, 65, 0.25)">
+                            <path
+                              d="M4.90237 7.88672L4.2969 7.33984C3.6068 6.71484 3.1055 6.2526 2.793 5.95312C2.4805 5.65365 2.12893 5.28255 1.73831 4.83984C1.3607 4.39714 1.10029 4 0.957059 3.64844C0.81383 3.28385 0.742215 2.91276 0.742215 2.53516C0.742215 1.89714 0.957059 1.35677 1.38675 0.914062C1.82945 0.471354 2.37633 0.25 3.02737 0.25C3.78258 0.25 4.40758 0.542969 4.90237 1.12891C5.39716 0.542969 6.02216 0.25 6.77737 0.25C7.42841 0.25 7.96878 0.471354 8.39847 0.914062C8.84117 1.35677 9.06253 1.89714 9.06253 2.53516C9.06253 3.04297 8.89326 3.57031 8.55472 4.11719C8.21617 4.66406 7.84508 5.13932 7.44143 5.54297C7.05081 5.94661 6.40628 6.55208 5.50784 7.35938L4.90237 7.88672Z" />
+                            <defs>
+                              <linearGradient id="paint0_linear_18384_118" x1="4.90237" y1="-6" x2="4.90237" y2="14"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#BC9CFF" />
+                                <stop offset="1" stop-color="#8BA4F9" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </span>
+                        <span class="like__count">6</span>
+                      </div>
+                      <p class="review__text">Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую
+                        заказать, каждый день новое блюдо и десерт как комплимент.</p>
+                    </div>
+                  </article>
+                </li>
               </ul>
             </div>
-            <div class="room-info__rules rules">
-              <h2 class="rules__title">Правила</h2>
-              <ul class="rules__list">
-                <li class="rules__item">Нельзя с питомцами</li>
-                <li class="rules__item">Без вечеринок и мероприятий</li>
-                <li class="rules__item">Время прибытия — после 13:00,
-                  а выезд до 12:00</li>
-              </ul>
-            </div>
-            <div class="room-info__cancel cancel">
-              <h2 class="cancel__title">Отмена</h2>
-              <p class="cancel__text">Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
-                до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
+            <div class="room-info__flex-row">
+              <div class="room-info__rules rules">
+                <h2 class="rules__title">Правила</h2>
+                <ul class="rules__list">
+                  <li class="rules__item">Нельзя с питомцами</li>
+                  <li class="rules__item">Без вечеринок и мероприятий</li>
+                  <li class="rules__item">Время прибытия — после 13:00,
+                    а выезд до 12:00</li>
+                </ul>
+              </div>
+              <div class="room-info__cancel cancel">
+                <h2 class="cancel__title">Отмена</h2>
+                <p class="cancel__text">Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+                  до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
+              </div>
             </div>
           </div>
           <form class="room-info__book-room book-room">
@@ -143,6 +236,7 @@
     </main>
     @@include('../parts/footer.html')
   </div>
+  <script src="../js/burger-menu.js"></script>
 </body>
 
 </html>
