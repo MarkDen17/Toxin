@@ -26,6 +26,7 @@
 }
 
 .unstyled {
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -70,13 +71,13 @@ h3 {
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #FFF;
+  color: #FFF !important;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
 
   &:hover,
   &:focus-visible {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 
@@ -84,7 +85,7 @@ h3 {
   position: relative;
   padding: 12px 25px;
   @include var.text-font-h3;
-  color: var.$purple-color;
+  color: var.$purple-color !important;
   text-transform: uppercase;
   background-color: white;
   border-radius: 22px;
@@ -101,12 +102,11 @@ h3 {
     z-index: -1;
   }
 
+
   &:hover,
   &:focus-visible {
-    &::before {
-      opacity: 0.5;
-    }
-
+    outline: none;
+    opacity: 0.6;
   }
 }
 
@@ -153,6 +153,7 @@ a:focus-visible {
 .dates {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 320px;
 
@@ -291,10 +292,14 @@ a:focus-visible {
 
   &__link {
     @include var.text-font-regular;
+    color: var.$dark-color50;
     white-space: nowrap;
 
     &:hover {
-      filter: brightness(1.2);
+
+      &:hover {
+        color: var.$dark-color75;
+      }
     }
   }
 
@@ -521,6 +526,11 @@ a:focus-visible {
 
   &__link {
     @include var.text-font-regular;
+    color: var.$dark-color50;
+
+    &:hover {
+      color: var.$dark-color75;
+    }
   }
 
   &__about {
@@ -679,11 +689,12 @@ a:focus-visible {
 }
 
 .find-room {
+  max-width: 380px;
 
   &__content {
     margin-top: 70px;
     padding: 40px 30px 30px;
-    max-width: 380px;
+
     min-width: 280px;
     background-color: #fff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -695,11 +706,12 @@ a:focus-visible {
 
 
   &__datapicker_inline {
-    // position: absolute;
-    // display: none;
-    // height: 0;
-    // width: 0;
-    // opacity: 0;
+
+    display: none;
+
+    .air-datepicker.-inline- {
+      position: absolute;
+    }
   }
 
   &__guests {
