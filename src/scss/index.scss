@@ -150,6 +150,85 @@ a:focus-visible {
   justify-content: space-between;
 }
 
+.dates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 320px;
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 9px;
+    @include var.text-font-h3;
+    text-transform: uppercase;
+
+    &::after {
+      content: url(../img/icons/arrow_down.svg);
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: calc(65px - 21px - 7.5px);
+      right: 0px;
+      padding-right: 15px;
+      pointer-events: none;
+    }
+  }
+
+  &__input {
+    @include var.regular-input;
+    margin-top: 6px;
+    max-width: 150px;
+    width: 100%;
+  }
+
+  @media (max-width: 420px) {
+    & {
+      flex-direction: column;
+    }
+
+    &__date {
+      max-width: 320px;
+    }
+
+    &__input {
+      max-width: 320px;
+    }
+  }
+}
+
+.guests {
+  &__label {
+    position: relative;
+    @include var.text-font-h3;
+    text-transform: uppercase;
+
+    &::after {
+      content: url(../img/icons/arrow_down.svg);
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: calc(65px - 21px - 7.5px);
+      right: 0px;
+      padding-right: 15px;
+      pointer-events: none;
+    }
+  }
+
+  &__input {
+    max-width: 320px;
+    @include var.regular-input;
+    margin-top: 5px;
+    padding-right: 30px;
+  }
+
+}
+
 // -----Header-----------
 .header {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -614,46 +693,6 @@ a:focus-visible {
     }
   }
 
-  &__dates {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 320px;
-  }
-
-  &__date {
-    max-width: 150px;
-    display: flex;
-    flex-direction: column;
-
-    & label {
-      position: relative;
-      margin-bottom: 9px;
-      @include var.text-font-h3;
-      text-transform: uppercase;
-
-      &::after {
-        content: url(../img/icons/arrow_down.svg);
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: calc(65px - 21px - 7.5px);
-        right: 0px;
-        padding-right: 15px;
-        pointer-events: none;
-      }
-
-      & span {
-        display: block;
-        margin-bottom: 6px;
-      }
-    }
-
-    & input {
-      @include var.regular-input;
-      max-width: 150px;
-    }
-  }
 
   &__datapicker_inline {
     // position: absolute;
@@ -663,53 +702,9 @@ a:focus-visible {
     // opacity: 0;
   }
 
-  @media (max-width: 420px) {
-    &__dates {
-      flex-direction: column;
-    }
-
-    &__date {
-      max-width: 320px;
-
-      & input {
-        max-width: 320px;
-        width: 100%;
-      }
-    }
-  }
-
-
   &__guests {
     margin-top: 12px;
     margin-bottom: 30px;
-
-    & label {
-      position: relative;
-      @include var.text-font-h3;
-      text-transform: uppercase;
-
-      &::after {
-        content: url(../img/icons/arrow_down.svg);
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: calc(65px - 21px - 7.5px);
-        right: 0px;
-        padding-right: 15px;
-        pointer-events: none;
-      }
-
-      & span {
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      & input {
-        max-width: 320px;
-        @include var.regular-input;
-        padding-right: 30px;
-      }
-    }
   }
 
   &__button {
@@ -1977,19 +1972,20 @@ a:focus-visible {
   max-width: 349px;
   font-family: 'Montserrat';
 
+  &__title {
+    margin-bottom: 21px;
+  }
 
   .donut__sub-text {
     text-transform: uppercase;
   }
 
-  &__list {}
+  &__list {
+    align-self: flex-end;
+  }
 
   &__item {
     @include var.text-font-regular;
-
-    &__title {
-      margin-bottom: 21px;
-    }
 
     &:before {
       content: "";
@@ -2267,9 +2263,8 @@ a:focus-visible {
     }
   }
 
-  &__find-room {}
-
   &__summary-items {
+    margin-top: 21px;
     margin-bottom: 20px;
     @include var.text-font-regular;
     line-height: 1.285rem;
@@ -2314,7 +2309,6 @@ a:focus-visible {
         overflow: hidden;
         text-overflow: ellipsis;
         border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
-        ;
       }
     }
   }
