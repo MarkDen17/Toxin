@@ -111,7 +111,8 @@
 }
 
 .air-datepicker-cell.-range-to-.-range-from- {
-  border-radius: var(--adp-cell-border-radius)
+  border-radius: var(--adp-cell-border-radius);
+  border-radius: 50%;
 }
 
 .air-datepicker-cell.-selected- {
@@ -128,7 +129,8 @@
 }
 
 .air-datepicker-cell.-selected-.-focus- {
-  background: var(--adp-cell-background-color-selected-hover)
+  background: var(--adp-cell-background-color-selected-hover);
+
 }
 
 .air-datepicker-body {
@@ -516,7 +518,8 @@
   --adp-background-color-in-range-focused: rgba(92, 196, 239, .2);
   --adp-background-color-selected-other-month-focused: #8ad5f4;
   --adp-background-color-selected-other-month: #a2ddf6;
-  --adp-color: #1F2041;;
+  --adp-color: #1F2041;
+  ;
   --adp-color-secondary: #9c9c9c;
   --adp-accent-color: rgba(188, 156, 255, 1);
   --adp-color-current-date: var(--adp-accent-color);
@@ -529,7 +532,8 @@
   --adp-border-radius: 4px;
   --adp-border-color-inline: #d7d7d7;
   --adp-nav-height: 40px;
-  --adp-nav-arrow-color: #BC9CFF;;
+  --adp-nav-arrow-color: #BC9CFF;
+  ;
   --adp-nav-action-size: 32px;
   --adp-nav-color-secondary: #1F2041;
   --adp-day-name-color: #BC9CFF;
@@ -541,12 +545,12 @@
   --adp-pointer-size: 10px;
   --adp-poiner-border-radius: 2px;
   --adp-pointer-offset: 14px;
-  --adp-cell-border-radius: 4px;
+  --adp-cell-border-radius: 50%;
   --adp-cell-background-color-hover: var(--adp-background-color-hover);
   --adp-cell-background-color-selected: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   --adp-cell-background-color-selected-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  --adp-cell-background-color-in-range: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
-  --adp-cell-background-color-in-range-hover: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
+  --adp-cell-background-color-in-range: linear-gradient(180deg, rgba(188, 156, 255, .25), rgba(139, 164, 249, .25));
+  --adp-cell-background-color-in-range-hover: linear-gradient(180deg, rgba(188, 156, 255, .25), rgba(139, 164, 249, .25));
   --adp-cell-border-color-in-range: var(--adp-cell-background-color-selected);
   --adp-btn-height: 40px;
   --adp-btn-color: var(--adp-accent-color);
@@ -834,22 +838,24 @@
   height: 40px;
 }
 
-.-range-from-:after, .-range-to-:after {
+.-range-from-:after,
+.-range-to-:after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  background: -webkit-gradient(linear,left top,left bottom,from(rgba(188,156,255,.25)),to(rgba(139,164,249,.25)));
-  background: -o-linear-gradient(top,rgba(188,156,255,.25),rgba(139,164,249,.25));
-  background: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, .25)), to(rgba(139, 164, 249, .25)));
+  background: -o-linear-gradient(top, rgba(188, 156, 255, .25), rgba(139, 164, 249, .25));
+  background: linear-gradient(180deg, rgba(188, 156, 255, .25), rgba(139, 164, 249, .25));
   z-index: -1;
 }
 
 .-range-from-:after {
-border-radius: 50% 0 0 50%;
+  border-radius: 50% 0 0 50%;
 }
+
 .-range-to-:after {
   border-radius: 0 50% 50% 0;
 }
