@@ -1,6 +1,5 @@
 "use strict"
-const inputFrom = document.querySelector("#date-from");
-const inputTo = document.querySelector("#date-to");
+
 const dataPickerContainer = document.querySelector(".find-room__datapicker_inline");
 
 const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
@@ -33,9 +32,12 @@ const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
   }]
 });
 
-function toggleDatePicker(event) {
-  const inputs = document.querySelectorAll('.dates__input');
-  if (dataPickerContainer && dataPicker) {
+
+if (dataPickerContainer && dataPicker) {
+  const inputFrom = document.querySelector("#date-from");
+  const inputTo = document.querySelector("#date-to");
+  function toggleDatePicker(event) {
+    const inputs = document.querySelectorAll('.dates__input');
     if ([...inputs].includes(event.target)) {
       if (getComputedStyle(dataPickerContainer).display === 'none') {
         dataPickerContainer.style.display = 'block'
@@ -49,6 +51,21 @@ function toggleDatePicker(event) {
       dataPickerContainer.style.display = 'none'
     }
   }
+  document.addEventListener("click", toggleDatePicker)
 }
 
-document.addEventListener("click", toggleDatePicker)
+
+if (document.querySelector('#guests-count') && document.querySelector('.dropdown-menu')) {
+  const container = document.querySelector('.guests');
+  const input = document.querySelector('#guests-count');
+  const applyButton = document.querySelector('.button-apply');
+  input.addEventListener("click", function () {
+    container.classList.toggle("_active")
+  })
+  input.addEventListener("keydown", function (event) {
+    if (event.key === 'Enter')
+      container.classList.toggle("_active")
+  })
+}
+
+
