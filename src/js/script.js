@@ -1,7 +1,5 @@
 "use strict"
-
 const dataPickerContainer = document.querySelector(".find-room__datapicker_inline");
-
 const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
   range: true,
   dynamicRange: true,
@@ -31,7 +29,7 @@ const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
     }
   }]
 });
-
+const counters = document.querySelectorAll('.item__quantity');
 
 if (dataPickerContainer && dataPicker) {
   const inputFrom = document.querySelector("#date-from");
@@ -54,7 +52,6 @@ if (dataPickerContainer && dataPicker) {
   document.addEventListener("click", toggleDatePicker)
 }
 
-
 if (document.querySelector('#guests-count') && document.querySelector('.dropdown-menu')) {
   const container = document.querySelector('.guests');
   const input = document.querySelector('#guests-count');
@@ -68,4 +65,21 @@ if (document.querySelector('#guests-count') && document.querySelector('.dropdown
   })
 }
 
+if (counters) {
+  counters.forEach(counter => counter.addEventListener("click", function (event) {
+
+    let value = parseInt(event.currentTarget.querySelector(".item__count").value);
+    if (event.target.value === "plus") {
+      value >= 99 ? value = 99 : value++;
+      if (value > 0) {
+        event.currentTarget.querySelector("[value = minus]").removeAttribute("disabled")
+      }
+    } else if (event.target.value === "minus") {
+      value--;
+      if (value <= 0) event.target.setAttribute("disabled", "")
+    }
+    event.currentTarget.querySelector(".item__count").value = value;
+  })
+  )
+}
 

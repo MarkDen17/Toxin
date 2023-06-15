@@ -161,6 +161,8 @@ h3 {
     text-transform: uppercase;
   }
 
+  .item__quantity {}
+
   .count-button {
     width: 30px;
     height: 30px;
@@ -173,10 +175,12 @@ h3 {
     font-weight: 400;
     font-size: 18px;
     color: var.$dark-color50;
+    user-select: none;
   }
 
   .count-button[disabled] {
     border: 1px solid var.$dark-color25;
+    cursor: default;
   }
 
   .count-button:focus-visible {
@@ -184,7 +188,10 @@ h3 {
   }
 
   .item__count {
-    @include var.text-font-h3
+    @include var.text-font-h3;
+    width: 20px;
+    text-align: center;
+
   }
 
   .button-apply {
