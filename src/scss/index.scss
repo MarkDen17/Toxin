@@ -657,9 +657,11 @@ a:focus-visible {
   &__email-input {
     position: relative;
     display: block;
-    padding: 12px 38px 8px 15px;
     max-width: 260px;
     @include var.regular-input;
+    padding: 0 35px 0 10px;
+    cursor: auto;
+
   }
 
   &__input-arrow {
