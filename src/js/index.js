@@ -63,6 +63,9 @@ if (document.querySelector('#guests-count') && document.querySelector('.dropdown
     if (event.key === 'Enter')
       container.classList.toggle("_active")
   })
+  applyButton.addEventListener("click", function () {
+    container.classList.remove("_active")
+  })
 }
 
 if (counters) {
