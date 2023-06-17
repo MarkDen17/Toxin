@@ -63,14 +63,15 @@ if (document.querySelector('#guests-count') && document.querySelector('.dropdown
     if (event.key === 'Enter')
       container.classList.toggle("_active")
   })
-  applyButton.addEventListener("click", function () {
-    container.classList.remove("_active")
+  document.addEventListener("click", function (event) {
+    if (container.classList.contains("_active") && event.target === applyButton || !event.target.closest(".guests")) {
+      container.classList.remove("_active")
+    }
   })
 }
 
 if (counters) {
   counters.forEach(counter => counter.addEventListener("click", function (event) {
-
     let value = parseInt(event.currentTarget.querySelector(".item__count").value);
     if (event.target.value === "plus") {
       value >= 99 ? value = 99 : value++;
@@ -82,6 +83,41 @@ if (counters) {
       if (value <= 0) event.target.setAttribute("disabled", "")
     }
     event.currentTarget.querySelector(".item__count").value = value;
+
+    const input = document.querySelector('#guests-count');
+    const guestsCount = [...document.querySelectorAll('.item__count')].map(item => Number(item.value));
+    let guestsSum = guestsCount.reduce((sum, item) => sum + item, 0)
+
+    switch (guestsSum) {
+      case 0:
+        input.value = `Сколько гостей`
+        break;
+      case 1:
+        input.value = `${guestsSum} гость`
+        break;
+      case 2:
+      case 3:
+      case 4:
+        input.value = `${guestsSum} гостя`
+        break;
+      default:
+        input.value = `${guestsSum} гостей`
+    }
+    switch (guestsCount[2]) {
+      case 0:
+        input.value += ``
+        break;
+      case 1:
+        input.value += ` ${guestsCount[2]} младенец`
+        break;
+      case 2:
+      case 3:
+      case 4:
+        input.value += ` ${guestsCount[2]} младенца`
+        break;
+      default:
+        input.value += ` ${guestsCount[2]} младенцев`
+    }
   })
   )
 }
