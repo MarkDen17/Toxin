@@ -58,7 +58,7 @@ h2 {
   @include var.text-font-h2
 }
 
-h3 {
+.h3 {
   @include var.text-font-h3
 }
 
@@ -225,7 +225,20 @@ h3 {
   border-bottom-left-radius: 0px;
 }
 
+.input-arrow {
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  width: 40px;
+  pointer-events: none;
 
+  &::before {
+    content: url(../img/icons/arrow_down.svg);
+    display: inline-block;
+  }
+}
 
 ._lock {
   overflow: hidden;
@@ -1175,73 +1188,57 @@ a:focus-visible {
     background-size: contain;
   }
 
-  h3 {
-    text-transform: uppercase;
+  &__dates-range {
+    margin-bottom: 20px;
   }
 
-  &__dates {
-    margin-bottom: 20px;
+  .dates-range {
+    &__title {
+      text-transform: uppercase;
+    }
 
-    label {
+    &__label {
       position: relative;
       display: block;
+    }
 
-      h3 {
-        margin-bottom: 5px;
-      }
-
-      input {
-        @include var.regular-input;
-      }
-
-      &::after {
-        content: url(../img/icons/arrow_down.svg);
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 36.5px;
-        right: 0;
-        padding-right: 15px;
-        pointer-events: none;
-      }
+    &__input {
+      margin-top: 5px;
+      @include var.regular-input;
+      text-transform: uppercase;
     }
   }
 
   &__guests-count {
     margin-bottom: 30px;
+  }
 
-    label {
+  .guests-count {
+    &__title {
+      text-transform: uppercase;
+    }
+
+    &__label {
       position: relative;
       display: block;
+    }
 
-      h3 {
-        margin-bottom: 5px;
-      }
-
-      input {
-        @include var.regular-input;
-      }
-
-      &::after {
-        content: url(../img/icons/arrow_down.svg);
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 36.5px;
-        right: 0;
-        padding-right: 15px;
-        pointer-events: none;
-      }
+    &__input {
+      margin-top: 5px;
+      @include var.regular-input;
     }
   }
 
-  &__price-filter {
+  &__price-filter {}
+
+  .price-filter {
     .container {
       position: relative;
     }
 
-    h3 {
+    &__title {
       display: inline;
+      text-transform: uppercase;
     }
 
     #slider-values {
@@ -1296,7 +1293,7 @@ a:focus-visible {
 
     }
 
-    p {
+    &__text {
       margin-top: 10px;
       font-family: 'Montserrat';
       font-style: normal;
@@ -1312,11 +1309,12 @@ a:focus-visible {
     margin-top: 30px;
     margin-bottom: 31px;
 
-    h3 {
+    .permissions__title {
       margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
-    label {
+    .permissions__label {
       position: relative;
       display: flex;
       align-items: center;
@@ -1328,7 +1326,7 @@ a:focus-visible {
       color: rgba(31, 32, 65, 0.5);
     }
 
-    input {
+    .permissions__input {
       position: absolute;
       height: 0;
       width: 0;
@@ -1374,17 +1372,24 @@ a:focus-visible {
   &__accessibility {
     margin-bottom: 30px;
 
-    label {
+    .accessibility__title {
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .accessibility__label {
       display: flex;
       align-items: center;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: var.$dark-color75;
       cursor: pointer;
     }
 
-    h3 {
-      display: inline;
-    }
-
-    p {
+    .accessibility__text {
       max-width: 230px;
       margin-left: 30px;
       margin-bottom: 10px;
@@ -1396,7 +1401,7 @@ a:focus-visible {
       color: rgba(31, 32, 65, 0.5);
     }
 
-    input {
+    .accessibility__input {
       position: absolute;
       height: 0;
       width: 0;
@@ -1441,28 +1446,34 @@ a:focus-visible {
   &__facilities {
     position: relative;
 
-    label {
+    .facilities__title {
+      text-transform: uppercase;
+    }
+
+    .facilities__label {
       position: relative;
       display: block;
+      margin-top: 5px;
 
       &:after {
         content: url("../img/icons/arrow_down.svg");
         display: inline-block;
         position: absolute;
-        top: calc(52% - 15px/2);
+        top: 50%;
         right: 0;
         z-index: 6;
         margin-left: 10px;
         padding: 10px 16px;
+        transform: translateY(-50%);
+        transform-origin: top;
         transition: rotate 0.3s;
+        pointer-events: none;
         cursor: pointer;
       }
-
     }
 
-    input {
+    .facilities__input {
       width: 100%;
-      margin-top: 5px;
       padding-left: 15px;
       padding-right: 15px;
       @include var.regular-input;
@@ -1496,7 +1507,7 @@ a:focus-visible {
         margin-bottom: 6px;
       }
 
-      .item__tittle {}
+      .item__title {}
 
       button {
         width: 30px;
@@ -1522,7 +1533,7 @@ a:focus-visible {
     }
   }
 
-  &__facilities._active label:after {
+  &__facilities._active .facilities__label:after {
     rotate: 180deg;
   }
 
@@ -1542,6 +1553,7 @@ a:focus-visible {
     }
 
     .additional-facilities__title {
+      text-transform: uppercase;
       cursor: pointer;
     }
 

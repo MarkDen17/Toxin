@@ -27,7 +27,7 @@ if (document.getElementById('slider') && document.getElementById('slider-values'
 }
 
 if (document.querySelector(".room-filter__facilities")) {
-  const dropdownMenu = document.querySelector(".room-filter__facilities label");
+  const dropdownMenu = document.querySelector(".facilities__label");
   dropdownMenu.addEventListener("click", function () {
     document.querySelector(".room-filter__facilities").classList.toggle("_active")
   })

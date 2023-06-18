@@ -13,69 +13,72 @@
       <aside class="room-filter">
         <button class="close-button" type="button">
         </button>
-        <div class="room-filter__dates">
-          <label for="dates">
-            <h3>даты пребывания в отеле</h3>
-            <input class="unstyled" id="dates" type="date" readonly>
+        <div class="room-filter__dates-range dates-range">
+          <h3 class="dates-range__title h3">даты пребывания в отеле</h3>
+          <label class="dates-range__label" for="dates">
+            <input class="unstyled dates-range__input" id="dates" placeholder="ДД.ММ.ГГГГ" readonly>
+            <span class="input-arrow"></span>
           </label>
         </div>
-        <div class="room-filter__guests-count">
-          <label for="guests-count">
-            <h3>гости</h3>
-            <input id="guests-count" type="number" readonly placeholder="Количество гостей">
+        <div class="room-filter__guests-count guests-count">
+          <h3 class="guests-count__title h3">гости</h3>
+          <label class="guests-count__label" for="guests-count">
+            <input class="guests-count__input" id="guests-count" type="number" readonly placeholder="Количество гостей">
+            <span class="input-arrow"></span>
           </label>
         </div>
-        <div class="room-filter__price-filter">
+        <div class="room-filter__price-filter price-filter">
           <label>
             <div class="container">
-              <h3>диапазон цены</h3>
+              <h3 class="price-filter__title h3">диапазон цены</h3>
               <span id="slider-values">5000 - 10000</span>
             </div>
             <div id="slider"></div>
           </label>
-          <p>Стоимость за сутки пребывания в номере</p>
+          <p class="price-filter__text">Стоимость за сутки пребывания в номере</p>
         </div>
-        <div class="room-filter__permissions">
-          <h3>правила дома</h3>
-          <label for="smoking-permission">
-            <input id="smoking-permission" type="checkbox">
+        <div class="room-filter__permissions permissions">
+          <h3 class="permissions__title h3">правила дома</h3>
+          <label class="permissions__label" for="smoking-permission">
+            <input class="permissions__input" id="smoking-permission" type="checkbox">
             <span class="checkmark"></span>
             Можно курить
           </label>
-          <label for="animals-permission">
-            <input id="animals-permission" type="checkbox">
+          <label class="permissions__label" for="animals-permission">
+            <input class="permissions__input" id="animals-permission" type="checkbox">
             <span class="checkmark"></span>
             Можно с питомцами
           </label>
-          <label for="invitation-permission">
-            <input id="invitation-permission" type="checkbox">
+          <label class="permissions__label" for="invitation-permission">
+            <input class="permissions__input" id="invitation-permission" type="checkbox">
             <span class="checkmark"></span>
             Можно пригласить гостей
             (до 10 человек)
           </label>
         </div>
-        <div class="room-filter__accessibility">
-          <label for="wide-hallway">
-            <input type="checkbox" id="wide-hallway">
+        <div class="room-filter__accessibility accessibility">
+          <h3 class="accessibility__title h3">доступность</h3>
+          <label class="accessibility__label" for="wide-hallway">
+            <input class="accessibility__input" type="checkbox" id="wide-hallway">
             <span class="checkmark"></span>
-            <h3>Широкий коридор</h3>
+            Широкий коридор
           </label>
-          <p>Ширина коридоров в номере не менее 91 см.</p>
-          <label for="assistant">
-            <input type="checkbox" id="assistant">
+          <p class="accessibility__text">Ширина коридоров в номере не менее 91 см.</p>
+          <label class="accessibility__label" for="assistant">
+            <input class="accessibility__input" type="checkbox" id="assistant">
             <span class="checkmark"></span>
-            <h3>Помощник для инвалидов</h3>
+            Помощник для инвалидов
           </label>
-          <p>На 1 этаже вас встретит специалист и проводит до номера.</p>
+          <p class="accessibility__text">На 1 этаже вас встретит специалист и проводит до номера.</p>
         </div>
-        <div class="room-filter__facilities">
-          <label for="">
-            <h3>удобства номера</h3>
-            <input value="Удобства номера" type="text" readonly>
+        <div class="room-filter__facilities facilities">
+          <h3 class="facilities__title h3">удобства номера</h3>
+          <label class="facilities__label">
+            <input class="facilities__input" value="Удобства номера" type="text" readonly>
           </label>
           <div class="dropdown-menu">
             <div class="dropdown-menu__item">
-              <h3 class="item__tittle">спальни</h3>
+              <h3 class="item__title h3"><label for="bedroom-count">спальни</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <span class="item__count">0</span>
@@ -83,7 +86,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__tittle">кровати</h3>
+              <h3 class="item__title h3"><label for="bed-count">кровати</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <span class="item__count">0</span>
@@ -91,7 +94,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__tittle">ванные комнаты</h3>
+              <h3 class="item__title h3"><label for="bathroom-count">ванные комнаты</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <span class="item__count">0</span>
@@ -99,11 +102,10 @@
               </div>
             </div>
           </div>
-
         </div>
         <fieldset class="room-filter__additional-facilities">
           <legend>
-            <h3 class="additional-facilities__title" data-open="false">дополнительные удобства</h3>
+            <h3 class="additional-facilities__title h3" data-open="false">дополнительные удобства</h3>
           </legend>
           <div class="container">
             <label>
@@ -142,16 +144,16 @@
       <main class="search-room-main">
         <div class="search-room-main__backdrop"></div>
         <div class="search-room-main__content">
-          <h1>Номера, которые мы для вас подобрали</h1>
+          <h1 class="h1">Номера, которые мы для вас подобрали</h1>
           <button class="filter-button" type="button">показать фильтры</button>
           <div class="search-room-main__catalog">
             <div class="catalog-card">
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-888.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-888.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-888.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-888.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -211,9 +213,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-980.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-980.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-980.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-980.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-980.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-980.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -242,9 +244,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-856.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-856.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-856.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-856.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-856.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-856.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -273,9 +275,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-740.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-740.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-740.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-740.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-740.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-740.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -304,9 +306,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-982.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-982.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-982.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-982.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-982.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-982.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -335,9 +337,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-678.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-678.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-678.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-678.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-678.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-678.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -366,9 +368,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-450.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-450.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-450.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-450.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-450.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-450.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -397,9 +399,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-350.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-350.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-350.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-350.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-350.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-350.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -428,9 +430,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-444.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-444.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-444.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-444.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-444.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-444.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -459,9 +461,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-666.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-666.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-666.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-666.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-666.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-666.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -490,9 +492,9 @@
               <div class="catalog-card__content">
                 <div class="catalog-card__images swiper">
                   <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="../img/search-room/room-352.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-352.jpg" alt="фото номера">
-                    <img class="swiper-slide" src="../img/search-room/room-352.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-352.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-352.jpg" alt="фото номера">
+                    <img class="swiper-slide" loading="lazy" src="../img/search-room/room-352.jpg" alt="фото номера">
                   </div>
                   <div class="swiper-pagination"></div>
                   <div class="swiper-button-prev"></div>
@@ -541,9 +543,9 @@
     </div>
   </div>
   @@include('../parts/footer.html')
-  <script src="../js/burger-menu.js"></script>
-  <script src="../js/nouislider.min.js"></script>
-  <script src="../js/search-room.js"></script>
+  <script defer src="../js/burger-menu.js"></script>
+  <script defer src="../js/nouislider.min.js"></script>
+  <script defer src="../js/search-room.js"></script>
   </div>
 </body>
 
