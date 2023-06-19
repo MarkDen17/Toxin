@@ -1548,11 +1548,8 @@ a:focus-visible {
     flex-direction: column;
     margin-top: 30px;
 
-    legend {
-      margin-bottom: 17px;
-    }
-
     .additional-facilities__title {
+      margin-bottom: 17px;
       text-transform: uppercase;
       cursor: pointer;
     }
@@ -1583,7 +1580,7 @@ a:focus-visible {
       visibility: visible;
     }
 
-    label {
+    .additional-facilities__label {
       display: flex;
       position: relative;
       margin-bottom: 12px;
@@ -1635,7 +1632,6 @@ a:focus-visible {
   }
 
   @media(max-width: 920px) {
-
     position: absolute;
     z-index: 4;
     top: 0;
@@ -1654,7 +1650,6 @@ a:focus-visible {
 
     &.room-filter_open {
       left: 0;
-
     }
   }
 
