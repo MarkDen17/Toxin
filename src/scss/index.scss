@@ -102,7 +102,6 @@ h2 {
     z-index: -1;
   }
 
-
   &:hover,
   &:focus-visible {
     outline: none;
@@ -191,12 +190,16 @@ h2 {
     @include var.text-font-h3;
     width: 20px;
     text-align: center;
-
+    background-color: #FFF;
   }
 
-  .button-apply {
-    margin-left: 225px;
-    margin-bottom: 10px;
+  &__buttons {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dropdown-button {
     padding: 3px;
     background-color: transparent;
     font-family: 'Montserrat';
@@ -206,18 +209,25 @@ h2 {
     line-height: 15px;
     color: var.$purple-color;
     text-transform: uppercase;
+    user-select: none;
 
     &:active,
     &:focus-visible {
       filter: brightness(1.2);
     }
   }
+
+  .clear-button {}
 }
 
 ._active .dropdown-menu {
   opacity: 1;
   visibility: visible;
   height: auto;
+}
+
+._active .guests__label::after {
+  transform: rotate(180deg);
 }
 
 ._active .guests__input {
@@ -242,6 +252,11 @@ h2 {
 
 ._lock {
   overflow: hidden;
+}
+
+.hidden-button {
+  opacity: 0;
+  visibility: hidden;
 }
 
 a:focus-visible {
@@ -322,13 +337,14 @@ a:focus-visible {
 
     &::after {
       content: url(../img/icons/arrow_down.svg);
-      width: auto;
-      height: auto;
       position: absolute;
       top: calc(65px - 21px - 7.5px);
       right: 0px;
-      padding-right: 15px;
+      width: auto;
+      height: auto;
+      padding-inline: 15px;
       pointer-events: none;
+      transition: 0.3s transform ease;
     }
   }
 
