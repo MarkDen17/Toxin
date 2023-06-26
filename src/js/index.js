@@ -1,5 +1,7 @@
 "use strict"
 const dataPickerContainer = document.querySelector(".find-room__datapicker_inline");
+const inputFrom = document.querySelector("#date-from");
+const inputTo = document.querySelector("#date-to");
 const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
   range: true,
   dynamicRange: true,
@@ -29,11 +31,9 @@ const dataPicker = new AirDatepicker('.find-room__datapicker_inline', {
     }
   }]
 });
-const counters = document.querySelectorAll('.item__quantity');
 
 if (dataPickerContainer && dataPicker) {
-  const inputFrom = document.querySelector("#date-from");
-  const inputTo = document.querySelector("#date-to");
+
   function toggleDatePicker(event) {
     const inputs = document.querySelectorAll('.dates__input');
     if ([...inputs].includes(event.target)) {
@@ -52,73 +52,143 @@ if (dataPickerContainer && dataPicker) {
   document.addEventListener("click", toggleDatePicker)
 }
 
-if (document.querySelector('#guests-count') && document.querySelector('.dropdown-menu')) {
-  const container = document.querySelector('.guests');
-  const input = document.querySelector('#guests-count');
-  const applyButton = document.querySelector('.button-apply');
-  input.addEventListener("click", function () {
-    container.classList.toggle("_active")
+
+// Dropdown counter
+const $counters = document.querySelectorAll('.item__quantity');
+if (document.querySelector('.dropdown-menu')) {
+  const $container = document.querySelector('.dropdown-menu').parentElement;
+  const $input = $container.querySelector('input');
+  const $applyButton = $container.querySelector('.apply-button');
+  $input.addEventListener("click", function () {
+    $container.classList.toggle("_active")
   })
-  input.addEventListener("keydown", function (event) {
+  $input.addEventListener("keydown", function (event) {
     if (event.key === 'Enter')
-      container.classList.toggle("_active")
+      $container.classList.toggle("_active")
   })
   document.addEventListener("click", function (event) {
-    if (container.classList.contains("_active") && event.target === applyButton || !event.target.closest(".guests")) {
-      container.classList.remove("_active")
+    if ($container.classList.contains("_active") && event.target === $applyButton || !event.target.closest(".guests")) {
+      $container.classList.remove("_active")
     }
   })
+
+
 }
 
-if (counters) {
-  counters.forEach(counter => counter.addEventListener("click", function (event) {
-    let value = parseInt(event.currentTarget.querySelector(".item__count").value);
-    if (event.target.value === "plus") {
-      value >= 99 ? value = 99 : value++;
-      if (value > 0) {
-        event.currentTarget.querySelector("[value = minus]").removeAttribute("disabled")
-      }
-    } else if (event.target.value === "minus") {
-      value--;
-      if (value <= 0) event.target.setAttribute("disabled", "")
-    }
-    event.currentTarget.querySelector(".item__count").value = value;
-
-    const input = document.querySelector('#guests-count');
-    const guestsCount = [...document.querySelectorAll('.item__count')].map(item => Number(item.value));
-    let guestsSum = guestsCount.reduce((sum, item) => sum + item, 0)
-
-    switch (guestsSum) {
-      case 0:
-        input.value = `Сколько гостей`
-        break;
-      case 1:
-        input.value = `${guestsSum} гость`
-        break;
-      case 2:
-      case 3:
-      case 4:
-        input.value = `${guestsSum} гостя`
-        break;
-      default:
-        input.value = `${guestsSum} гостей`
-    }
-    switch (guestsCount[2]) {
-      case 0:
-        input.value += ``
-        break;
-      case 1:
-        input.value += ` ${guestsCount[2]} младенец`
-        break;
-      case 2:
-      case 3:
-      case 4:
-        input.value += ` ${guestsCount[2]} младенца`
-        break;
-      default:
-        input.value += ` ${guestsCount[2]} младенцев`
-    }
-  })
+if ($counters) {
+  $counters.forEach(counter => counter.addEventListener("click", dropDownHandler)
   )
 }
 
+function dropDownHandler(event) {
+  const $container = document.querySelector('.dropdown-menu').parentElement;
+  const $input = $container.querySelector('input');
+  const $itemCount = this.querySelector(".item__count");
+  let itemCountValue = parseInt($itemCount.value);
+
+  if (event.target.value === "plus") {
+    itemCountValue >= 99 ? itemCountValue = 99 : itemCountValue++;
+    if ($container.querySelector(".clear-button").classList.contains("hidden-button")) {
+      $container.querySelector(".clear-button").classList.remove("hidden-button");
+    }
+    if (this.querySelector("[value = minus]").hasAttribute("disabled")) {
+      this.querySelector("[value = minus]").removeAttribute("disabled");
+    }
+  } else if (event.target.value === "minus") {
+    itemCountValue--;
+    if (itemCountValue === 0) {
+      event.target.setAttribute("disabled", "");
+    }
+  }
+  $itemCount.value = itemCountValue;
+
+  const countsValueArray = [...document.querySelectorAll('.item__count')].map(item => Number(item.value));
+  let countsValueSum = countsValueArray.reduce((sum, item) => sum + item, 0);
+  if (countsValueSum === 0) $container.querySelector(".clear-button").classList.add("hidden-button"); // hidding clear button
+  if ($input.matches("#guests-count")) {
+    switch (countsValueSum) {
+      case 0:
+        $input.value = `Сколько гостей`
+        break;
+      case 1:
+        $input.value = `${countsValueSum} гость`
+        break;
+      case 2:
+      case 3:
+      case 4:
+        $input.value = `${countsValueSum} гостя`
+        break;
+      default:
+        $input.value = `${countsValueSum} гостей`
+    }
+    switch (countsValueArray[2]) {
+      case 0:
+        $input.value += ``
+        break;
+      case 1:
+        $input.value += ` ${countsValueArray[2]} младенец`
+        break;
+      case 2:
+      case 3:
+      case 4:
+        $input.value += ` ${countsValueArray[2]} младенца`
+        break;
+      default:
+        $input.value += ` ${countsValueArray[2]} младенцев`
+    }
+  } else if ($input.matches("#facilities-count")) {
+    switch (countsValueArray[0]) {
+      case 0:
+        $input.value = ` `
+        break;
+      case 1:
+        $input.value = `${countsValueArray[0]} спальня `
+        break;
+      case 2:
+      case 3:
+      case 4:
+        $input.value = `${countsValueArray[0]} спальни `
+        break;
+      default:
+        $input.value = `${countsValueArray[0]} спален `
+    };
+    switch (countsValueArray[1]) {
+      case 0:
+        $input.value = ` `
+        break;
+      case 1:
+        $input.value = `${countsValueArray[0]} кровать `
+        break;
+      case 2:
+      case 3:
+      case 4:
+        $input.value = `${countsValueArray[0]} кровати `
+        break;
+      default:
+        $input.value = `${countsValueArray[0]} кроватей `
+    }
+    switch (countsValueArray[2]) {
+      case 0:
+        $input.value = ` `
+        break;
+      case 1:
+        $input.value = `${countsValueArray[0]} ванная`
+        break;
+      case 2:
+      case 3:
+      case 4:
+        $input.value = `${countsValueArray[0]} ванны`
+        break;
+      default:
+        $input.value = `${countsValueArray[0]} ванн`
+    }
+  }
+}
+// Clear button
+document.querySelector('.clear-button').addEventListener('click', function () {
+  $counters.forEach(element => element.querySelector('input').value = 0);
+  document.querySelector('#guests-count').value = '';
+  this.classList.add("hidden-button");
+})
+
+////////////////////
