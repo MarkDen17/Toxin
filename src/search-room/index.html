@@ -20,12 +20,41 @@
             <span class="input-arrow"></span>
           </label>
         </div>
-        <div class="room-filter__guests-count guests-count">
-          <h3 class="guests-count__title h3">гости</h3>
-          <label class="guests-count__label" for="guests-count">
-            <input class="guests-count__input" id="guests-count" type="number" readonly placeholder="Количество гостей">
-            <span class="input-arrow"></span>
+        <div class="room-filter__guests guests">
+          <label for="guests-count" class="guests__label">
+            <div>гости</div>
+            <input id="guests-count" class="guests__input" type="" placeholder="Сколько гостей" readonly>
           </label>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu__item">
+              <h3 class="item__title h3"><label for="adult-count">взрослые</label></h3>
+              <div class="item__quantity">
+                <button class="count-button" type="button" value="minus" disabled>-</button>
+                <input class="item__count" id="adult-count" type="text" value="0" disabled>
+                <button class="count-button" type="button" value="plus">+</button>
+              </div>
+            </div>
+            <div class="dropdown-menu__item">
+              <h3 class="item__title h3"><label for="children-count">дети</label></h3>
+              <div class="item__quantity">
+                <button class="count-button" type="button" value="minus" disabled>-</button>
+                <input class="item__count" id="children-count" type="text" value="0" disabled>
+                <button class="count-button" type="button" value="plus">+</button>
+              </div>
+            </div>
+            <div class="dropdown-menu__item">
+              <h3 class="item__title h3"><label for="baby-count">младенцы</label></h3>
+              <div class="item__quantity">
+                <button class="count-button" type="button" value="minus" disabled>-</button>
+                <input class="item__count" id="baby-count" type="text" value="0" disabled>
+                <button class="count-button" type="button" value="plus">+</button>
+              </div>
+            </div>
+            <div class="dropdown-menu__buttons">
+              <button class="clear-button dropdown-button hidden-button" type="button">очистить</button>
+              <button class="apply-button dropdown-button" type="button">применить</button>
+            </div>
+          </div>
         </div>
         <div class="room-filter__price-filter price-filter">
           <label>
@@ -74,14 +103,14 @@
         <div class="room-filter__facilities facilities">
           <h3 class="facilities__title h3">удобства номера</h3>
           <label class="facilities__label">
-            <input class="facilities__input" value="Удобства номера" type="text" readonly>
+            <input class="facilities__input" id="facilities-count" value="Удобства номера" type="text" readonly>
           </label>
           <div class="dropdown-menu">
             <div class="dropdown-menu__item">
               <h3 class="item__title h3"><label for="bedroom-count">спальни</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <span class="item__count">0</span>
+                <input class="item__count" id="adult-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>
@@ -89,7 +118,7 @@
               <h3 class="item__title h3"><label for="bed-count">кровати</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <span class="item__count">0</span>
+                <input class="item__count" id="adult-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>
@@ -97,7 +126,7 @@
               <h3 class="item__title h3"><label for="bathroom-count">ванные комнаты</label></h3>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <span class="item__count">0</span>
+                <input class="item__count" id="adult-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>

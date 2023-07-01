@@ -26,13 +26,6 @@ if (document.getElementById('slider') && document.getElementById('slider-values'
   });
 }
 
-// if (document.querySelector(".room-filter__facilities")) {
-//   const dropdownMenu = document.querySelector(".facilities__label");
-//   dropdownMenu.addEventListener("click", function () {
-//     document.querySelector(".room-filter__facilities").classList.toggle("_active")
-//   })
-// }
-
 if (document.querySelector(".room-filter__additional-facilities")) {
   const checkboxMenuButton = document.querySelector(".additional-facilities__title")
   checkboxMenuButton.addEventListener("click", function () {
@@ -69,7 +62,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-
+// mobile filter
 if (document.querySelector(".room-filter") && document.querySelector(".filter-button")) {
   const button = document.querySelector(".filter-button")
   const roomFilter = document.querySelector(".room-filter")
@@ -90,27 +83,26 @@ if (document.querySelector(".close-button")) {
   })
 }
 
-
+// Dropdown counter
 const $counters = document.querySelectorAll('.item__quantity');
 if (document.querySelector('.dropdown-menu')) {
-  const $container = document.querySelector('.dropdown-menu').parentElement;
-  console.log($container);
-  const $input = $container.querySelector('input');
-  // const $applyButton = $container.querySelector('.apply-button');
-  $input.addEventListener("click", function () {
-    $container.classList.toggle("_active")
-  })
-  $input.addEventListener("keydown", function (event) {
-    if (event.key === 'Enter')
+  const $dropdowns = document.querySelectorAll('.dropdown-menu')
+  $dropdowns.forEach(dropdown => {
+    const $container = dropdown.parentElement;
+    const $input = $container.querySelector('input');
+    $input.addEventListener("click", function () {
       $container.classList.toggle("_active")
+    })
+    $input.addEventListener("keydown", function (event) {
+      if (event.key === 'Enter')
+        $container.classList.toggle("_active")
+    })
+    document.addEventListener("click", function (event) {
+      if ($container.classList.contains("_active") && !event.target.closest(".guests") && !event.target.closest(".facilities")) {
+        $container.classList.remove("_active")
+      }
+    })
   })
-  document.addEventListener("click", function (event) {
-    if ($container.classList.contains("_active") && event.target === $applyButton || !event.target.closest(".guests")) {
-      $container.classList.remove("_active")
-    }
-  })
-
-
 }
 
 if ($counters) {
@@ -119,7 +111,7 @@ if ($counters) {
 }
 
 function dropDownHandler(event) {
-  const $container = document.querySelector('.dropdown-menu').parentElement;
+  const $container = this.closest('.dropdown-menu').parentElement;
   const $input = $container.querySelector('input');
   const $itemCount = this.querySelector(".item__count");
   let itemCountValue = parseInt($itemCount.value);
@@ -136,16 +128,17 @@ function dropDownHandler(event) {
     }
   }
   $itemCount.value = itemCountValue;
-
-  const countsValueArray = [...document.querySelectorAll('.item__count')].map(item => Number(item.value));
+  const countsValueArray = [...$container.querySelectorAll('.item__count')].map(item => Number(item.value));
   let countsValueSum = countsValueArray.reduce((sum, item) => sum + item, 0);
   if ($input.matches("#guests-count")) {
     switch (countsValueSum) {
       case 0:
-        $input.value = `Сколько гостей`
+        $input.value = `Сколько гостей`;
+        $container.querySelector('.clear-button').classList.add("hidden-button");
         break;
       case 1:
-        $input.value = `${countsValueSum} гость`
+        $input.value = `${countsValueSum} гость`;
+        $container.querySelector('.clear-button').classList.remove("hidden-button");
         break;
       case 2:
       case 3:
@@ -157,15 +150,15 @@ function dropDownHandler(event) {
     }
     switch (countsValueArray[2]) {
       case 0:
-        $input.value += ``
+        $input.value += ``;
         break;
       case 1:
-        $input.value += ` ${countsValueArray[2]} младенец`
+        $input.value += ` ${countsValueArray[2]} младенец`;
         break;
       case 2:
       case 3:
       case 4:
-        $input.value += ` ${countsValueArray[2]} младенца`
+        $input.value += ` ${countsValueArray[2]} младенца`;
         break;
       default:
         $input.value += ` ${countsValueArray[2]} младенцев`
@@ -173,7 +166,7 @@ function dropDownHandler(event) {
   } else if ($input.matches("#facilities-count")) {
     switch (countsValueArray[0]) {
       case 0:
-        $input.value = ` `
+        $input.value = ``
         break;
       case 1:
         $input.value = `${countsValueArray[0]} спальня `
@@ -185,36 +178,43 @@ function dropDownHandler(event) {
         break;
       default:
         $input.value = `${countsValueArray[0]} спален `
-    };
+    }
     switch (countsValueArray[1]) {
       case 0:
-        $input.value = ` `
+        $input.value += ``
         break;
       case 1:
-        $input.value = `${countsValueArray[0]} кровать `
+        $input.value += `${countsValueArray[1]} кровать `
         break;
       case 2:
       case 3:
       case 4:
-        $input.value = `${countsValueArray[0]} кровати `
+        $input.value += `${countsValueArray[1]} кровати `
         break;
       default:
-        $input.value = `${countsValueArray[0]} кроватей `
+        $input.value += `${countsValueArray[1]} кроватей `
     }
     switch (countsValueArray[2]) {
       case 0:
-        $input.value = ` `
+        $input.value += ` `
         break;
       case 1:
-        $input.value = `${countsValueArray[0]} ванная`
+        $input.value += `${countsValueArray[2]} ванная`
         break;
       case 2:
       case 3:
       case 4:
-        $input.value = `${countsValueArray[0]} ванны`
+        $input.value += `${countsValueArray[2]} ванны`
         break;
       default:
-        $input.value = `${countsValueArray[0]} ванн`
+        $input.value += `${countsValueArray[2]} ванн`
     }
   }
 }
+
+// Clear button
+document.querySelector('.clear-button').addEventListener('click', function () {
+  $counters.forEach(element => element.querySelector('input').value = 0);
+  document.querySelector('#guests-count').value = '';
+  this.classList.add("hidden-button");
+})
