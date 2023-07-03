@@ -14,20 +14,20 @@
         <button class="close-button" type="button">
         </button>
         <div class="room-filter__dates-range dates-range">
-          <h3 class="dates-range__title h3">даты пребывания в отеле</h3>
+          <span class="dates-range__title h3">даты пребывания в отеле</span>
           <label class="dates-range__label" for="dates">
             <input class="unstyled dates-range__input" id="dates" placeholder="ДД.ММ.ГГГГ" readonly>
             <span class="input-arrow"></span>
           </label>
         </div>
         <div class="room-filter__guests guests">
+          <span class="h3">гости</span>
           <label for="guests-count" class="guests__label">
-            <div>гости</div>
             <input id="guests-count" class="guests__input" type="" placeholder="Сколько гостей" readonly>
           </label>
           <div class="dropdown-menu">
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="adult-count">взрослые</label></h3>
+              <span class="item__title h3"><label for="adult-count">взрослые</label></span>
               <div class="item__quantity">
                 <button class="count-button" type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="adult-count" type="text" value="0" disabled>
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="children-count">дети</label></h3>
+              <span class="item__title h3"><label for="children-count">дети</label></span>
               <div class="item__quantity">
                 <button class="count-button" type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="children-count" type="text" value="0" disabled>
@@ -43,7 +43,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="baby-count">младенцы</label></h3>
+              <span class="item__title h3"><label for="baby-count">младенцы</label></span>
               <div class="item__quantity">
                 <button class="count-button" type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="baby-count" type="text" value="0" disabled>
@@ -59,7 +59,7 @@
         <div class="room-filter__price-filter price-filter">
           <label>
             <div class="container">
-              <h3 class="price-filter__title h3">диапазон цены</h3>
+              <span class="price-filter__title h3">диапазон цены</span>
               <span id="slider-values">5000 - 10000</span>
             </div>
             <div id="slider"></div>
@@ -67,7 +67,7 @@
           <p class="price-filter__text">Стоимость за сутки пребывания в номере</p>
         </div>
         <div class="room-filter__permissions permissions">
-          <h3 class="permissions__title h3">правила дома</h3>
+          <div class="permissions__title h3">правила дома</div>
           <label class="permissions__label" for="smoking-permission">
             <input class="permissions__input" id="smoking-permission" type="checkbox">
             <span class="checkmark"></span>
@@ -86,7 +86,7 @@
           </label>
         </div>
         <div class="room-filter__accessibility accessibility">
-          <h3 class="accessibility__title h3">доступность</h3>
+          <div class="accessibility__title h3">доступность</div>
           <label class="accessibility__label" for="wide-hallway">
             <input class="accessibility__input" type="checkbox" id="wide-hallway">
             <span class="checkmark"></span>
@@ -101,13 +101,13 @@
           <p class="accessibility__text">На 1 этаже вас встретит специалист и проводит до номера.</p>
         </div>
         <div class="room-filter__facilities facilities">
-          <h3 class="facilities__title h3">удобства номера</h3>
+          <span class="facilities__title h3">удобства номера</span>
           <label class="facilities__label">
             <input class="facilities__input" id="facilities-count" value="Удобства номера" type="text" readonly>
           </label>
           <div class="dropdown-menu">
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="bedroom-count">спальни</label></h3>
+              <span class="item__title h3"><label for="bedroom-count">спальни</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="adult-count" type="text" value="0" disabled>
@@ -115,7 +115,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="bed-count">кровати</label></h3>
+              <span class="item__title h3"><label for="bed-count">кровати</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="adult-count" type="text" value="0" disabled>
@@ -123,7 +123,7 @@
               </div>
             </div>
             <div class="dropdown-menu__item">
-              <h3 class="item__title h3"><label for="bathroom-count">ванные комнаты</label></h3>
+              <span class="item__title h3"><label for="bathroom-count">ванные комнаты</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
                 <input class="item__count" id="adult-count" type="text" value="0" disabled>
@@ -134,7 +134,7 @@
         </div>
         <fieldset class="room-filter__additional-facilities">
           <legend>
-            <h3 class="additional-facilities__title h3" data-open="false">дополнительные удобства</h3>
+            <span class="additional-facilities__title h3" data-open="false">дополнительные удобства</span>
           </legend>
           <div class="container">
             <label class="additional-facilities__label">

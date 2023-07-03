@@ -11,30 +11,30 @@
       <div class="main__content">
         <form class="find-room">
           <div class="find-room__content">
-            <h1>Найдём номера под ваши пожелания</h1>
+            <h1 class="h1">Найдём номера под ваши пожелания</h1>
             <div class="find-room__dates dates">
               <div class="dates__date">
+                <span class="h3">прибытие</span>
                 <label for="date-from" class="dates__label">
-                  <div>прибытие</div>
                   <input id="date-from" class="dates__input" readonly placeholder="ДД.ММ.ГГГГ">
                 </label>
               </div>
               <div class="dates__date">
+                <span class="h3">выезд</span>
                 <label for="date-to" class="dates__label">
-                  <div>выезд</div>
                   <input id="date-to" class="dates__input" readonly placeholder="ДД.ММ.ГГГГ">
                 </label>
               </div>
             </div>
             <div class="find-room__datapicker_inline"></div>
             <div class="find-room__guests guests">
+              <span class="h3">гости</span>
               <label for="guests-count" class="guests__label">
-                <div>гости</div>
-                <input id="guests-count" class="guests__input" type="" placeholder="Сколько гостей" readonly>
+                <input id="guests-count" class="guests__input" placeholder="Сколько гостей" readonly>
               </label>
               <div class="dropdown-menu">
                 <div class="dropdown-menu__item">
-                  <h3 class="item__title h3"><label for="adult-count">взрослые</label></h3>
+                  <div class="item__title h3"><label for="adult-count">взрослые</label></div>
                   <div class="item__quantity">
                     <button class="count-button" type="button" value="minus" disabled>-</button>
                     <input class="item__count" id="adult-count" type="text" value="0" disabled>
@@ -42,7 +42,7 @@
                   </div>
                 </div>
                 <div class="dropdown-menu__item">
-                  <h3 class="item__title h3"><label for="children-count">дети</label></h3>
+                  <div class="item__title h3"><label for="children-count">дети</label></div>
                   <div class="item__quantity">
                     <button class="count-button" type="button" value="minus" disabled>-</button>
                     <input class="item__count" id="children-count" type="text" value="0" disabled>
@@ -50,7 +50,7 @@
                   </div>
                 </div>
                 <div class="dropdown-menu__item">
-                  <h3 class="item__title h3"><label for="baby-count">младенцы</label></h3>
+                  <div class="item__title h3"><label for="baby-count">младенцы</label></div>
                   <div class="item__quantity">
                     <button class="count-button" type="button" value="minus" disabled>-</button>
                     <input class="item__count" id="baby-count" type="text" value="0" disabled>

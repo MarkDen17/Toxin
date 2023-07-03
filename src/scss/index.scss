@@ -50,11 +50,11 @@ html {
   font-size: 14px;
 }
 
-h1 {
+.h1 {
   @include var.text-font-h1
 }
 
-h2 {
+.h2 {
   @include var.text-font-h2
 }
 
@@ -312,29 +312,32 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     max-width: 150px;
+    text-transform: uppercase;
   }
 
   &__label {
     position: relative;
+    margin-top: 6px;
     margin-bottom: 9px;
     @include var.text-font-h3;
-    text-transform: uppercase;
+
 
     &::after {
       content: url(../img/icons/arrow_down.svg);
       width: auto;
       height: auto;
       position: absolute;
-      top: calc(65px - 21px - 7.5px);
+      top: 50%;
       right: 0px;
       padding-right: 15px;
+      transform: translateY(-50%);
       pointer-events: none;
     }
   }
 
   &__input {
     @include var.regular-input;
-    margin-top: 6px;
+
     max-width: 150px;
     width: 100%;
   }
@@ -355,16 +358,20 @@ a:focus-visible {
 }
 
 .guests {
+
+  .h3 {
+    text-transform: uppercase;
+  }
+
   &__label {
     position: relative;
     @include var.text-font-h3;
-    text-transform: uppercase;
 
     &::after {
       content: url(../img/icons/arrow_down.svg);
       position: absolute;
-      top: calc(65px - 21px - 7.5px);
-      right: 0px;
+      top: 0;
+      right: 0;
       width: auto;
       height: auto;
       padding-inline: 15px;
@@ -660,10 +667,9 @@ a:focus-visible {
     margin-right: 51px;
   }
 
-  &__menu h3,
-  .footer__subscribe h3 {
+  &__menu .h3,
+  &__subscribe .h3 {
     margin-bottom: 21px;
-    @include var.text-font-h3;
     text-transform: uppercase;
   }
 
@@ -997,11 +1003,11 @@ a:focus-visible {
       z-index: 0
     }
 
-    h1 {
+    .h1 {
       margin-bottom: 20px;
     }
 
-    h3 {
+    .h3 {
       margin-bottom: 5px;
       text-transform: uppercase;
     }
@@ -1250,25 +1256,6 @@ a:focus-visible {
     }
   }
 
-  // &__guests-count {
-  //   margin-bottom: 30px;
-  // }
-
-  // .guests-count {
-  //   &__title {
-  //     text-transform: uppercase;
-  //   }
-
-  //   &__label {
-  //     position: relative;
-  //     display: block;
-  //   }
-
-  //   &__input {
-  //     margin-top: 5px;
-  //     @include var.regular-input;
-  //   }
-  // }
   &__guests {
     position: relative;
   }
