@@ -64,8 +64,9 @@ html {
 
 .button_purple {
   display: block;
+  position: relative;
   text-align: center;
-  padding: 14px 22px 15px 18px;
+  padding: 14px 20px 15px 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -78,7 +79,28 @@ html {
 
   &:hover,
   &:focus-visible {
-    opacity: 0.6;
+    // opacity: 0.6;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    bottom: 6px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.8;
   }
 }
 
@@ -86,11 +108,12 @@ html {
   position: relative;
   padding: 12px 25px;
   @include var.text-font-h3;
-  color: var.$purple-color !important;
+  color: var.$purple-color;
   text-transform: uppercase;
   background-color: white;
   border-radius: 22px;
   user-select: none;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -104,10 +127,36 @@ html {
     z-index: -1;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 62%;
+    bottom: 6px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    background-color: #bc9cff;
+  }
+
   &:hover,
   &:focus-visible {
     outline: none;
-    opacity: 0.6;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    opacity: 1;
+
+  }
+
+  &:active {
+    color: rgba(188, 156, 255, 0.8)
+  }
+
+  &:active::before,
+  &:active::before {
+    background: linear-gradient(180deg, #bb9cffd3, #8ba5f9d3);
   }
 }
 
@@ -474,7 +523,7 @@ a:focus-visible {
 
 
   &__login-button {
-    padding: 7.5px 18px;
+    padding: 8px 18px;
     color: var.$purple-color;
     font-style: normal;
     font-weight: 700;
@@ -737,6 +786,10 @@ a:focus-visible {
     height: 46px;
     padding: 0 5px 0 35px;
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__bottom {
@@ -895,6 +948,10 @@ a:focus-visible {
       top: 50%;
       transform: translate(0, -50%);
     }
+
+    &:before {
+      width: 45%;
+    }
   }
 }
 
@@ -955,6 +1012,10 @@ a:focus-visible {
         right: 15px;
         top: 50%;
         transform: translate(0, -50%);
+      }
+
+      &::before {
+        width: 20%;
       }
     }
 
@@ -1034,12 +1095,12 @@ a:focus-visible {
           margin-right: 15px;
         }
 
-        input {
+        .checkbox {
           position: absolute;
           height: 0;
           width: 0;
           opacity: 0;
-          visibility: hidden;
+          // visibility: hidden;
           cursor: pointer;
         }
 
@@ -1080,6 +1141,10 @@ a:focus-visible {
           background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
 
+        input:focus-visible+.checkmark {
+          outline: auto;
+        }
+
       }
     }
 
@@ -1105,14 +1170,15 @@ a:focus-visible {
       display: block;
       height: 34px;
       margin-bottom: 16px;
-      @include var.text-font-regular
+      @include var.text-font-regular;
+      user-select: none;
     }
 
     .switch input {
       opacity: 0;
       width: 0;
       height: 0;
-      visibility: hidden;
+      // visibility: hidden;
     }
 
     .slider {
@@ -1164,6 +1230,10 @@ a:focus-visible {
       border-radius: 50%;
     }
 
+    input:focus-visible+.slider {
+      outline: auto;
+    }
+
     .payment-button {
       position: relative;
       margin-bottom: 31px;
@@ -1176,6 +1246,10 @@ a:focus-visible {
         right: 15px;
         top: 50%;
         transform: translate(0, -50%);
+      }
+
+      &::before {
+        width: 45%;
       }
     }
 
@@ -2486,6 +2560,10 @@ a:focus-visible {
       right: 15px;
       top: 50%;
       transform: translate(0, -50%);
+    }
+
+    &::before {
+      width: 45%;
     }
 
   }
