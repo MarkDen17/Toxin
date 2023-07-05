@@ -218,3 +218,33 @@ document.querySelector('.clear-button').addEventListener('click', function () {
   document.querySelector('#guests-count').value = '';
   this.classList.add("hidden-button");
 })
+//
+
+const dataPickerContainer = document.querySelector(".find-room__datapicker_inline");
+const input = document.querySelector('.dates-range__input')
+const dataPicker = new AirDatepicker('.dates-range__input', {
+  range: true,
+  dynamicRange: true,
+  inline: false,
+  multipleDatesSeparator: " - ",
+  visible: false,
+  timepicker: false,
+  minDate: new Date(),
+  position: 'bottom center',
+  dateFormat: 'dd MMM',
+  buttons: [{
+    content: "очистить",
+    tagName: "div",
+    onClick: (dataPicker) => {
+      dataPicker.clear();
+      dataPicker.hide();
+    }
+  },
+  {
+    content: "Применить",
+    tagName: "div",
+    onClick: (dataPicker) => {
+      dataPicker.hide();
+    }
+  }]
+});

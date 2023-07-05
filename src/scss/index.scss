@@ -147,7 +147,6 @@ html {
   &:hover::after,
   &:focus-visible::after {
     opacity: 1;
-
   }
 
   &:active {
@@ -1328,6 +1327,15 @@ a:focus-visible {
       @include var.regular-input;
       text-transform: uppercase;
     }
+
+    // .datapicker_inline {
+
+    //   display: none;
+
+    //   .air-datepicker.-inline- {
+    //     position: absolute;
+    //   }
+    // }
   }
 
   &__guests {
