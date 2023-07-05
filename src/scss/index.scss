@@ -2499,6 +2499,10 @@ a:focus-visible {
     }
   }
 
+  &__guests {
+    position: relative;
+  }
+
   &__summary-items {
     margin-top: 21px;
     margin-bottom: 20px;

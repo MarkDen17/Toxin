@@ -189,7 +189,7 @@
                 <span class="room-header__price-per-day">9 990₽ в сутки</span>
               </h1>
               <div class="book-room__find-room">
-                <div class="dates">
+                <div class="book-room__dates dates">
                   <div class="dates__date">
                     <div class="h3">прибытие</div>
                     <label for="date-from" class="dates__label">
@@ -204,11 +204,41 @@
                   </div>
                 </div>
                 <div class="book-room__datapicker_inline"></div>
-                <div class="guests">
+                <div class="book-room__guests guests">
                   <div class="h3">гости</div>
                   <label class="guests__label" for="guests-count">
-                    <input class="guests__input" id="guests-count" type="" placeholder="Сколько гостей">
+                    <input class="guests__input" id="guests-count" type="" placeholder="Сколько гостей" readonly>
                   </label>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-menu__item">
+                      <div class="item__title h3"><label for="adult-count">взрослые</label></div>
+                      <div class="item__quantity">
+                        <button class="count-button" type="button" value="minus" disabled>-</button>
+                        <input class="item__count" id="adult-count" type="text" value="0" disabled>
+                        <button class="count-button" type="button" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown-menu__item">
+                      <div class="item__title h3"><label for="children-count">дети</label></div>
+                      <div class="item__quantity">
+                        <button class="count-button" type="button" value="minus" disabled>-</button>
+                        <input class="item__count" id="children-count" type="text" value="0" disabled>
+                        <button class="count-button" type="button" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown-menu__item">
+                      <div class="item__title h3"><label for="baby-count">младенцы</label></div>
+                      <div class="item__quantity">
+                        <button class="count-button" type="button" value="minus" disabled>-</button>
+                        <input class="item__count" id="baby-count" type="text" value="0" disabled>
+                        <button class="count-button" type="button" value="plus">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown-menu__buttons">
+                      <button class="clear-button dropdown-button hidden-button" type="button">очистить</button>
+                      <button class="apply-button dropdown-button" type="button">применить</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="book-room__summary-items">
