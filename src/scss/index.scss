@@ -596,6 +596,10 @@ a:focus-visible {
     border-radius: 50%;
   }
 
+  .burger-icon:focus-visible {
+    outline: auto;
+  }
+
   .burger-icon__body {
     margin: auto;
     position: relative;
@@ -656,10 +660,12 @@ a:focus-visible {
     border-bottom: 2px solid var.$purple-color;
     overflow: hidden;
     transition: transform 0.3s ease;
+    visibility: hidden;
   }
 
   .header__menu._active {
     transform: translateY(352px);
+    visibility: visible;
   }
 
   .header__login-menu {
