@@ -468,8 +468,11 @@ a:focus-visible {
   }
 
   &__logo {
-    line-height: 70px;
     z-index: 10;
+
+    .logo-link {
+      display: inline-block;
+    }
 
     img {
       vertical-align: middle;
@@ -704,6 +707,10 @@ a:focus-visible {
   &__logo {
     margin: 0 0 16px 0;
     height: 40px;
+
+    .footer-link {
+      display: inline-block;
+    }
   }
 
   &__info {
@@ -821,6 +828,30 @@ a:focus-visible {
     justify-content: space-between;
     align-items: center;
   }
+
+  .social-menu {
+    &__link {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    & .twitter-link {
+      background-image: url('/img/icons/twiter-logo.svg');
+    }
+
+    & .facebook-link {
+      background-image: url('/img/icons/facebook-logo.svg');
+    }
+
+    & .instagram-link {
+      background-image: url('/img/icons/insta-logo.svg');
+    }
+  }
+
 }
 
 @media (max-width: 1070px) {
