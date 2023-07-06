@@ -1391,6 +1391,7 @@ a:focus-visible {
     max-width: 320px;
 
     .container {
+      display: block;
       position: relative;
     }
 
@@ -1709,9 +1710,11 @@ a:focus-visible {
     margin-top: 30px;
 
     .additional-facilities__title {
+      display: block;
       margin-bottom: 17px;
       text-transform: uppercase;
       cursor: pointer;
+      user-select: none;
     }
 
 

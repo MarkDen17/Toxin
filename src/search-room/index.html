@@ -24,7 +24,7 @@
         <div class="room-filter__guests guests">
           <div class="h3">гости</div>
           <label for="guests-count" class="guests__label">
-            <input id="guests-count" class="guests__input" type="" placeholder="Сколько гостей" readonly>
+            <input id="guests-count" class="guests__input" type="text" placeholder="Сколько гостей" readonly>
           </label>
           <div class="dropdown-menu">
             <div class="dropdown-menu__item">
@@ -59,12 +59,12 @@
         </div>
         <div class="room-filter__price-filter price-filter">
           <label>
-            <div class="container">
+            <span class="container">
               <span class="price-filter__title h3">диапазон цены</span>
               <span id="slider-values">5000 - 10000</span>
-            </div>
-            <div id="slider"></div>
+            </span>
           </label>
+          <div id="slider"></div>
           <p class="price-filter__text">Стоимость за сутки пребывания в номере</p>
         </div>
         <div class="room-filter__permissions permissions">
@@ -111,7 +111,7 @@
               <span class="item__title h3"><label for="bedroom-count">спальни</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <input class="item__count" id="adult-count" type="text" value="0" disabled>
+                <input class="item__count" id="bedroom-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>
@@ -119,7 +119,7 @@
               <span class="item__title h3"><label for="bed-count">кровати</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <input class="item__count" id="adult-count" type="text" value="0" disabled>
+                <input class="item__count" id="bed-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>
@@ -127,7 +127,7 @@
               <span class="item__title h3"><label for="bathroom-count">ванные комнаты</label></span>
               <div class="item__quantity">
                 <button type="button" value="minus" disabled>-</button>
-                <input class="item__count" id="adult-count" type="text" value="0" disabled>
+                <input class="item__count" id="bathroom-count" type="text" value="0" disabled>
                 <button type="button" value="plus">+</button>
               </div>
             </div>
@@ -135,7 +135,7 @@
         </div>
         <fieldset class="room-filter__additional-facilities">
           <legend>
-            <div class="additional-facilities__title h3" data-open="false">дополнительные удобства</div>
+            <span class="additional-facilities__title h3" data-open="false">дополнительные удобства</ы>
           </legend>
           <div class="container">
             <label class="additional-facilities__label">
