@@ -14,7 +14,7 @@
             <h1 class="h1">Регистрация аккаунта</h1>
             <input class="account-registration__name" type="text" placeholder="Имя">
             <input class="account-registration__surname" type="text" placeholder="Фамилия">
-            <fieldset class="account-registration__gender-select" for="gender">
+            <fieldset class="account-registration__gender-select">
               <label for="male">Мужчина
                 <input class="checkbox" type="radio" name="gender" id="male" tabindex="0" checked>
                 <span class="checkmark"></span>
@@ -24,10 +24,10 @@
                 <span class="checkmark"></span>
               </label>
             </fieldset>
-            <label for="birthdate">
-              <div class="h3">дата рождения</div>
+            <label for="birthdate" class="h3">
+              дата рождения
             </label>
-            <input class="account-registration__birthdate" id="birthdate" type="" placeholder="ДД.ММ.ГГГГ">
+            <input class="account-registration__birthdate date-mask" id="birthdate" placeholder="ДД.ММ.ГГГГ">
             <div class="h3">данные для входа в сервис</div>
             <input class="account-registration__email-input" type="email" placeholder="Email">
             <input class="account-registration__password-input" type="password" placeholder="Пароль">
@@ -48,6 +48,7 @@
     @@include('../parts/footer.html')
   </div>
   <script src="../js/burger-menu.js"></script>
+  <script src="../js/date-mask.js"></script>
 </body>
 
 </html>

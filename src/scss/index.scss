@@ -659,8 +659,8 @@ a:focus-visible {
     border-top: 2px solid var.$purple-color;
     border-bottom: 2px solid var.$purple-color;
     overflow: hidden;
-    transition: transform 0.3s ease;
     visibility: hidden;
+    transition: transform 0.3s ease;
   }
 
   .header__menu._active {
@@ -1113,6 +1113,7 @@ a:focus-visible {
     }
 
     .h3 {
+      display: inline-block;
       margin-bottom: 5px;
       text-transform: uppercase;
     }
